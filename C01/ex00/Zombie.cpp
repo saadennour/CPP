@@ -6,13 +6,13 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:31:06 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 14:35:33 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/08 16:59:30 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	announce(void)
+void	Zombie::announce(void)
 {
-	std::cout << ":  BraiiiiiiinnnzzzZ..." << "\n";
+	std::cout << ": BraiiiiiiinnnzzzZ..." << "\n";
 }

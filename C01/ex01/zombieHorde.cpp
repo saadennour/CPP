@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 11:25:20 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:43:01 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/09/08 15:57:21 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/09/08 16:04:30 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie	*zombieHorde(int N, std::string name)
 {
-	Zombie	zombie("foo");
-	Zombie	*infected;
+	Zombie	*horde;
+	int		i;
 
-	std::cout << zombie.getter();
-	zombie.announce();
-	infected = newZombie("poo");
-	std::cout << infected->getter();
-	infected->announce();
-	randomChump("Chump");
-	delete infected;
-	return (0);
+	i = 0;
+	horde = new Zombie[N];
+	while (i < N)
+	{
+		horde[i] = Zombie(name);
+		i++;
+	}
+	return (horde);
 }

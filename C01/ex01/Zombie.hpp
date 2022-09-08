@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 11:25:20 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:43:01 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/09/08 15:15:57 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/09/08 16:59:57 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-int main()
+#include <iostream>
+
+class Zombie
 {
-	Zombie	zombie("foo");
-	Zombie	*infected;
+private:
+	std::string	name;
+public:
+	Zombie(){};
+	Zombie(std::string value)
+	{
+		name = value;
+	}
 
-	std::cout << zombie.getter();
-	zombie.announce();
-	infected = newZombie("poo");
-	std::cout << infected->getter();
-	infected->announce();
-	randomChump("Chump");
-	delete infected;
-	return (0);
-}
+	std::string	getter()
+	{
+		return name;
+	}
+
+	void	announce(void);
+	~Zombie(){
+		std::cout << name << " has been destroyed" << std::endl;
+	}
+};
+
+Zombie	*zombieHorde(int N, std::string name);
+
+#endif

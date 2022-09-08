@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:53 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 15:07:25 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/08 16:54:36 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ public:
 	{
 		name = value;
 	}
-	void	announce(void)
+	std::string	getter()
 	{
-		std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+		return name;
 	}
+	void	announce(void);
 	~Zombie(){
 		std::cout << name << " object has been destroyed" << std::endl;
 	}

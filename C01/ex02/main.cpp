@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 11:25:20 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:43:01 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/09/08 17:06:16 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/09/08 17:53:45 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
-	Zombie	zombie("foo");
-	Zombie	*infected;
+	std::string	str = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &str;
+	std::string	&stringREF = str;
 
-	std::cout << zombie.getter();
-	zombie.announce();
-	infected = newZombie("poo");
-	std::cout << infected->getter();
-	infected->announce();
-	randomChump("Chump");
-	delete infected;
+	std::cout << "memory address of str : " << &str << std::endl;
+	std::cout << "memory address held by stringPTR : " << stringPTR << std::endl;
+	std::cout << "memory address held by stringREF : " << &stringREF << std::endl;
+	std::cout << "the value of str is : " << str << std::endl;
+	std::cout << "the value pointed to by stringPTR : " << *stringPTR << std::endl;
+	std::cout << "the value pointed to by stringREF : " << stringREF << std::endl;
 	return (0);
 }
