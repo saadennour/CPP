@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:50:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/10 00:54:20 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/11 01:03:15 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Weapon
 private:
 	std::string	type;
 public:
+	Weapon();
 	Weapon(std::string weapon){
 		type = weapon;
 	};
@@ -30,7 +31,7 @@ public:
 	const std::string&	getType(){
 		return (type);
 	}
-	~Weapon();
+	~Weapon(){};
 };
 
 #endif

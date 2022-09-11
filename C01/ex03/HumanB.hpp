@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:37:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/10 00:50:04 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/11 01:03:38 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 class HumanB
 {
 private:
-	std::string	name;
+	static std::string	name;
 public:
 	HumanB(std::string call){
 		name = call;
 	};
-	std::string getName(){
+	static std::string getName(){
 		return (name);
 	}
 	void	attack();
-	~HumanB();
+	~HumanB(){};
 };
 
 #endif
