@@ -1,0 +1,18 @@
+NAME = Sed
+
+FLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRCS =	main.c \
+
+all : $(NAME)
+
+$(NAME) : $(SRCS)
+		c++ $(FLAGS) $(SRCS) -o Sed
+
+clean :
+		rm -rf $(NAME)
+
+fclean :
+		rm -rf $(NAME)
+
+re : fclean all

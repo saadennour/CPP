@@ -6,28 +6,34 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:37:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/11 01:03:38 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 01:49:58 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+# ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-#include <iostream>
 #include "Weapon.hpp"
 
 class HumanB
 {
 private:
-	static std::string	name;
+	std::string	name;
+	Weapon		*weapon;
 public:
 	HumanB(std::string call){
 		name = call;
 	};
-	static std::string getName(){
+	std::string getName(){
 		return (name);
 	}
-	void	attack();
+	std::string	getWeapon(){
+		return (weapon->getType());
+	}
+	void	setWeapon(Weapon *arm){
+		weapon = arm;
+	}
+	void	attack(HumanB *bob);
 	~HumanB(){};
 };
 

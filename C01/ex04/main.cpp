@@ -5,29 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 19:50:23 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 02:10:04 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/09/12 02:30:25 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Sed.hpp"
 
-int main()
+int main(int ac, char **av)
 {
+	if (ac != 4)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", &club);
-		bob.attack(bob);
-		club.setType("some other type of club");
-		bob.attack(bob);
+		std::cout << "Wrong number of arguments" << std::endl;
+		return (0);
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(&club);
-		jim.attack(&jim);
-		club.setType("some other type of club");
-		jim.attack(&jim);
-	}
+	
+	return (0);
 }

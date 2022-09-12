@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:36:59 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 00:33:22 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 02:28:29 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 
 #pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+#ifndef _ACCOUNT_HPP
+#define _ACCOUNT_HPP
 #include <iostream>
 
 // ************************************************************************** //
@@ -36,10 +36,18 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
+	static int	getNbAccounts( void ){
+		return (_nbAccounts);
+	};
+	static int	getTotalAmount( void ){
+		return (_totalAmount);
+	};
+	static int	getNbDeposits( void ){
+		return (_totalNbDeposits);
+	};
+	static int	getNbWithdrawals( void ){
+		return (_totalNbWithdrawals);
+	};
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit ){
@@ -51,6 +59,11 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
+
+	Account( void )
+	{
+		_nbAccounts++;
+	};
 
 private:
 
@@ -66,32 +79,28 @@ private:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void )
-	{
-		_nbAccounts++;
-	};
 
 };
 
-int	Account::getNbAccounts( void )
-{
-	return (_nbAccounts);
-}
+// int	Account::getNbAccounts( void )
+// {
+// 	return (_nbAccounts);
+// }
 
-int	Account::getTotalAmount( void )
-{
-	return (_totalAmount);
-}
+// int	Account::getTotalAmount( void )
+// {
+// 	return (_totalAmount);
+// }
 
-int	Account::getNbDeposits( void )
-{
-	return (_totalNbDeposits);
-}
+// int	Account::getNbDeposits( void )
+// {
+// 	return (_totalNbDeposits);
+// }
 
-int	Account::getNbWithdrawals( void )
-{
-	return (_totalNbWithdrawals);
-}
+// int	Account::getNbWithdrawals( void )
+// {
+// 	return (_totalNbWithdrawals);
+// }
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
