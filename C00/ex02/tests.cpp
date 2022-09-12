@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:36:40 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/09 18:36:42 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 00:31:36 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 #include <algorithm>
 #include <functional>
 #include "Account.hpp"
-
 
 int		main( void ) {
 

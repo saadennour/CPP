@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:36:59 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/10 00:31:34 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 00:33:22 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,14 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void )
-	{
-		return (_nbAccounts);
-	};
-	int	setTotalAmount(int Tamount)
-	{
-		_totalAmount = Tamount;
-	}
-	static int	getTotalAmount( void )
-	{
-		return (_totalAmount);
-	};
+	static int	getNbAccounts( void );
+	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );
 	static int	getNbWithdrawals( void );
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit ){
 		_amount = initial_deposit;
-		_totalAmount += initial_deposit;
 	};
 	~Account( void ){};
 
@@ -83,6 +72,26 @@ private:
 	};
 
 };
+
+int	Account::getNbAccounts( void )
+{
+	return (_nbAccounts);
+}
+
+int	Account::getTotalAmount( void )
+{
+	return (_totalAmount);
+}
+
+int	Account::getNbDeposits( void )
+{
+	return (_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals( void )
+{
+	return (_totalNbWithdrawals);
+}
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //

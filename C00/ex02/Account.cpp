@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:37:11 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/10 00:32:33 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 00:32:59 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 void	Account::makeDeposit( int deposit )
 {
-	
+	(void)deposit;
 	return ;
 }
 
 void	Account::displayStatus( void ) const
 {
-	return ;
+	Account::getNbAccounts();
 }
 
 void	Account::displayAccountsInfos( void )
 {
-	
+	std::cout << "Account::getNbAccounts()" << std::endl;
 }
