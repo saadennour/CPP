@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:57 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 02:32:46 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/13 02:25:22 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define SED_HPP
 
 #include <iostream>
-#include <cstdio>
+#include <fstream>
 
 
 

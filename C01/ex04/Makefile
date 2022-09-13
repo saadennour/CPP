@@ -2,7 +2,7 @@ NAME = Sed
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRCS =	main.c \
+SRCS =	main.cpp \
 
 all : $(NAME)
 
