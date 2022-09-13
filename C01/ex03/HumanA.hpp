@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:51:20 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 01:55:05 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 22:54:37 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	std::string	getWeapon(){
 		return (weapon->getType());
 	};
-	void	attack(HumanA &bob);
+	void	attack();
 	~HumanA(){};
 };
 

@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:37:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 01:49:58 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/12 22:54:54 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	void	setWeapon(Weapon *arm){
 		weapon = arm;
 	}
-	void	attack(HumanB *bob);
+	void	attack();
 	~HumanB(){};
 };
 
