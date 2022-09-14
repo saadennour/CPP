@@ -6,18 +6,31 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/13 02:35:47 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/14 05:41:39 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
+
+char	*fill_str(char c)
+{
+	char		*str;
+	static int	len = 1;
+
+	str = new char[len];
+	str[len - 1] = c;
+	str[len] = '\0';
+	len++;
+	return (str);
+}
 
 int main(int ac, char **av)
 {
 	std::fstream	file;
 	std::fstream	replaced_file;
 	char			copy_file[100] = "nothing";
-	char			word;
+	char			c;
+	char			*word;
 
 	if (ac != 4)
 	{
@@ -37,6 +50,17 @@ int main(int ac, char **av)
 	{
 		std::cout << "File didn't creat successfully !" << std::endl;
 		return (1);
+	}
+	while (1)
+	{
+		while (!file.eof())
+		{
+			file >> c;
+			while (c != ' ')
+				break ;
+			word = fill_str(c);
+		}
+		
 	}
 	// open file with fstream class
 	// open another file and name it file.replace
