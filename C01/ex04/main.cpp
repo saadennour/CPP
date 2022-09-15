@@ -6,11 +6,33 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/15 01:59:36 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/15 05:12:16 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
+
+char	*fill_str(char *ptr, char *word, char **av)
+{
+	int	i, j, x;
+	int	len;
+	char	*new_word;
+
+	i = 0;
+	j = 0;
+	x = 0;
+	len = strlen(av[3]) + strlen(word);
+	new_word = new char[len];
+	while (i < ptr - word)
+		new_word[i++] = word[j++];
+	while (av[3][x])
+		new_word[i++] = av[3][x++];
+	j += strlen(av[2]);
+	while (word[j])
+		new_word[i++] = word[j++];
+	new_word[i] = '\0';
+	return (new_word);
+}
 
 void	replace_word(std::string line, char **av)
 {
@@ -18,6 +40,7 @@ void	replace_word(std::string line, char **av)
 	int	j;
 	int	len;
 	char	*word;
+	char	*ptr;
 	char	copy_file[100] = "nothing";
 	std::fstream	file;
 
@@ -42,8 +65,9 @@ void	replace_word(std::string line, char **av)
 			word[j++] = line[i++];
 		}
 		word[j] = '\0';
-		if (strcmp(av[2], word) == 0)
-			file << av[3];
+		ptr = strstr(word, av[2]);
+		if (ptr && j != 0)
+			file << fill_str(ptr, word, av);
 		else
 			file << word;
 		if (line[i] == ' ' || line[i] == '\t')
@@ -78,6 +102,7 @@ int main(int ac, char **av)
 	while (!file.eof())
 	{
 		std::getline(file, word);
+		std::cout << word << "\n";
 		replace_word(word, av);
 	}
 	return (0);
