@@ -1,18 +1,19 @@
 NAME = Sed
-
+HHH
 FLAGS = -Wall -Werror -Wextra -std=c++98
-
+HHH
 SRCS =	main.cpp \
-
+HHH
 all : $(NAME)
-
+HHH
 $(NAME) : $(SRCS)
-		c++ $(FLAGS) $(SRCS) -o Sed
-
+HHH	HHH	c++ $(FLAGS) $(SRCS) -o Sed
+HHH
 clean :
-		rm -rf $(NAME)
-
+HHH	HHH	rm -rf $(NAME)
+HHH
 fclean :
-		rm -rf $(NAME)
-
+HHH	HHH	rm -rf $(NAME)
+HHH
 re : fclean all
+HHH
