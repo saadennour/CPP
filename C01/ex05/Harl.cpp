@@ -39,16 +39,11 @@ void	Harl::complain(std::string level)
 	std::string	acts[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int	i = 0;
 	waitress	ptr[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	//waitress	ptr = &Harl::debug;
 
 	while (i < 4)
 	{
-		std::cout << acts[i] << "\n";
 		if (acts[i] == level)
-		{
-			*ptr[i] ();
-			break ;
-		}
+			(this->*ptr[i]) ();
 		i++;
 	}
 }
