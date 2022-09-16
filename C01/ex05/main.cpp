@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 03:43:35 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/15 05:55:24 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/16 06:04:42 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int main()
 {
 	Harl		customer;
-	std::string	level;
 
-	std::getline(std::cin, level);
-	customer.complain(level);
+	customer.complain("DEBUG");
 	return (0);
 }

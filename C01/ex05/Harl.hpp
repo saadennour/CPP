@@ -6,11 +6,11 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 03:42:40 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/15 05:21:58 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/16 00:13:53 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL__HPP
+#ifndef HARL_HPP
 #define HARL_HPP
 
 #include <iostream>
