@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 09:50:13 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/18 13:47:06 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/18 15:25:36 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 int		Fixed::toInt(void) const
 {
-	return ((this->nvalue >> 8));
+	if (this->nvalue > 1)
+		return ((this->nvalue >> this->nfbits));
+	else
+		return (Fixed::toFloat());
 }
 
 float	Fixed::toFloat(void) const
 {
 	float	result;
 
-	return (result = this->nvalue / (2^this->nfbits));
+	return (result = this->fvalue / (2^this->nfbits));
 }
 
 void	Fixed::setRawBits(int const raw)
@@ -33,4 +36,10 @@ int		Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called\n";
 	return this->nvalue;
+}
+
+std::ostream& operator<< (std::ostream &out, const Fixed &copy){
+	out << copy.toFloat();
+	out << copy.toInt();
+	return out;
 }

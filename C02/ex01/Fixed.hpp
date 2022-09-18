@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 08:59:29 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/18 13:53:00 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/09/18 15:24:25 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,20 @@ class	Fixed
 {
 private :
 	int			nvalue;
+	float		fvalue;
 	static const int	nfbits = 8;
 public :
 	Fixed(){
 		nvalue = 0;
+		fvalue = 0;
 		std::cout << "Default constructor called\n";
 	};
 	Fixed(const int data){
 		nvalue = (data << nfbits);
-		std::cout << "Int constructor called with " << nvalue << "\n";
+		std::cout << "Int constructor called with " << "\n";
 	};
 	Fixed(const float data){
-		nvalue = data * (2^nfbits);
+		fvalue = data * (2^nfbits);
 		std::cout << "Float constructor called\n";
 	};
 	Fixed(const Fixed &a)
@@ -42,8 +44,10 @@ public :
 	Fixed& operator=(const Fixed &copy){
 		std::cout << "Copy assignment operator called\n";
 		this->nvalue = copy.nvalue;
+		this->fvalue = copy.fvalue;
 		return *this;
 	}
+
 	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
@@ -53,5 +57,7 @@ public :
 		std::cout << "Destructor called\n";
 	};
 };
+
+std::ostream& operator<< (std::ostream &out, const Fixed &copy);
 
 #endif
