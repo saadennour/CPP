@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 02:56:42 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/18 08:57:57 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/09/18 09:50:13 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/09/18 13:47:06 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main()
+int		Fixed::toInt(void) const
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	return ((this->nvalue >> 8));
+}
 
-	b.setRawBits(8);
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return (0);
+float	Fixed::toFloat(void) const
+{
+	float	result;
+
+	return (result = this->nvalue / (2^this->nfbits));
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->nvalue = raw;
+}
+
+int		Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called\n";
+	return this->nvalue;
 }
