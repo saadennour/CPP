@@ -12,19 +12,46 @@
 
 #include "Fixed.hpp"
 
+Fixed::Fixed()
+{
+	nvalue = 0;
+	std::cout << "Default constructor called\n";
+}
+
+Fixed::Fixed(const int data)
+{
+	nvalue = (data << nfbits);
+	std::cout << "Int constructor called\n";
+}
+
+Fixed::Fixed(const float data)
+{
+	nvalue = data * (1 << nfbits);
+	std::cout << "Float constructor called\n";
+}
+
+Fixed::Fixed(const Fixed &a)
+{
+	std::cout << "Copy constructor called\n";
+	*this = a;
+}
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called\n";
+}
+
 int		Fixed::toInt(void) const
 {
-	if (this->nvalue > 1)
-		return ((this->nvalue >> this->nfbits));
-	else
-		return (Fixed::toFloat());
+	return ((this->nvalue >> (this->nfbits)));
 }
 
 float	Fixed::toFloat(void) const
 {
-	float	result;
+	float	result = this->nvalue;
 
-	return (result = this->fvalue / (2^this->nfbits));
+	result /= (1 << this->nfbits);
+	return (result);
 }
 
 void	Fixed::setRawBits(int const raw)
@@ -38,8 +65,15 @@ int		Fixed::getRawBits(void) const
 	return this->nvalue;
 }
 
-std::ostream& operator<< (std::ostream &out, const Fixed &copy){
+Fixed& Fixed::operator=(const Fixed &copy)
+{
+	std::cout << "Copy assignment operator called\n";
+	this->nvalue = copy.nvalue;
+	return *this;
+}
+
+std::ostream& operator<< (std::ostream &out, const Fixed &copy)
+{
 	out << copy.toFloat();
-	out << copy.toInt();
 	return out;
 }

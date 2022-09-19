@@ -20,42 +20,19 @@ class	Fixed
 {
 private :
 	int			nvalue;
-	float		fvalue;
 	static const int	nfbits = 8;
 public :
-	Fixed(){
-		nvalue = 0;
-		fvalue = 0;
-		std::cout << "Default constructor called\n";
-	};
-	Fixed(const int data){
-		nvalue = (data << nfbits);
-		std::cout << "Int constructor called with " << "\n";
-	};
-	Fixed(const float data){
-		fvalue = data * (2^nfbits);
-		std::cout << "Float constructor called\n";
-	};
-	Fixed(const Fixed &a)
-	{
-		std::cout << "Copy constructor called\n";
-		*this = a;
-	};
-	Fixed& operator=(const Fixed &copy){
-		std::cout << "Copy assignment operator called\n";
-		this->nvalue = copy.nvalue;
-		this->fvalue = copy.fvalue;
-		return *this;
-	}
+	Fixed();
+	Fixed(const int data);
+	Fixed(const float data);
+	Fixed(const Fixed &a);
+	Fixed& operator=(const Fixed &copy);
 
-	
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;
 	int		toInt(void) const;
-	~Fixed(){
-		std::cout << "Destructor called\n";
-	};
+	~Fixed();
 };
 
 std::ostream& operator<< (std::ostream &out, const Fixed &copy);
