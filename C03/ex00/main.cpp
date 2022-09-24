@@ -7,17 +7,7 @@ int main()
     ClapTrap    ana("eagon");
 
     vis = ana;
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
+    for(int i = 0; i <= 10; i++)
+        vis.attack("aemon");
     return (0);
 }

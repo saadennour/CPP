@@ -6,18 +6,8 @@ int main()
     ScavTrap    ana("saad");
 
     vis = ana;
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
-    vis.attack("aemon");
+    for (int i = 0; i <= 50; i++)
+        vis.attack("aemon");
     vis.guardGate();
     return (0);
 }
