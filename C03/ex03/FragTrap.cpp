@@ -3,7 +3,6 @@
 FragTrap::FragTrap()
 {
     Hit_points = 100;
-    Energy_points = 100;
     Attack_damage = 30;
     std::cout << "Default constructor of FragTrap is called\n";
 }
@@ -20,7 +19,6 @@ FragTrap::FragTrap(std::string call)
 FragTrap::FragTrap(const FragTrap& copy)
 {
     *this = copy;
-    std::cout << "Copy constructor of FragTrap is called\n";
 }
 
 FragTrap::~FragTrap()
