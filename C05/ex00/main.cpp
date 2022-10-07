@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:39:09 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:39:10 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/10/06 22:48:09 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/07 21:47:04 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    return 0;
+	Bureaucrat	noble("george", 12);
+	Bureaucrat	noble2("fred", -1);
+
+	std::cout << noble.getGrade() << " " << noble.getName() << "\n";
+	std::cout << noble2.getGrade() << " " << noble2.getName() << "\n";
+	return (0);
 }
