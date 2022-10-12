@@ -12,25 +12,105 @@
 
 #include "Account.hpp"
 
-bool	Account::makeWithdrawal( int withdrawal )
+int	Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
+
+Account::Account(void)
 {
-	if (withdrawal < 100)
-		return (0);
-	return (1);
+	std::cout << "Default constructor has been called\n";
+}
+
+Account::Account(int initial_deposit)
+{
+	static int index;
+	_amount = initial_deposit;
+	_accountIndex = index;
+	_totalAmount += initial_deposit;
+	_nbAccounts++;
+	index++;
+	std::cout << "Constructor has been called\n";
+}
+
+Account::~Account(void)
+{
+	std::cout << "Destructor has been called\n";
 }
 
 void	Account::makeDeposit( int deposit )
 {
-	(void)deposit;
-	return ;
+	_amount += deposit;
+	_totalAmount += deposit;
+	_nbDeposits++;
+	_totalNbDeposits++;
+}
+
+bool	Account::makeWithdrawal( int withdrawal )
+{
+	if (_amount < 100)
+		return (0);
+	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
+	_nbWithdrawals++;
+	_totalNbWithdrawals++;
+	return (1);
+}
+
+int	Account::checkAmount(void) const
+{
+	return (this->_amount);
 }
 
 void	Account::displayStatus( void ) const
 {
-	std::cout << Account::getNbAccounts() << "\n";
+	std::cout << Account::getNbAccounts() << " ana status\n";
 }
 
-void	Account::displayAccountsInfos( void )
+int	Account::getNbAccounts( void )
 {
-	std::cout << "Account::getNbAccounts()" << std::endl;
+	return (_nbAccounts);
+}
+
+int	Account::getTotalAmount(void)
+{
+	return (_totalAmount);
+}
+
+int Account::getNbDeposits(void)
+{
+	return (_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
+
+int	Account::getindex(void)
+{
+	return (this->_accountIndex);
+}
+
+int	Account::getamount(void)
+{
+	return (this->_amount);
+}
+
+int Account::getndeposits(void)
+{
+	return (this->_nbDeposits);
+}
+
+int	Account::getnwithdrawals(void)
+{
+	return (this->_nbWithdrawals);
+}
+
+void	Account::displayAccountsInfos(void)
+{
+	std::cout << "accounts:" << getNbAccounts() ;
+	std::cout << ";total:" << getTotalAmount();
+	std::cout << ";deposits:" << getNbDeposits();
+	std::cout << ";withdrawal:" << getNbWithdrawals() << "\n";
 }

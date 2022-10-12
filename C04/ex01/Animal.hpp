@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/06 22:39:30 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/06 22:39:31 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
@@ -16,7 +28,7 @@ public:
 
     virtual void    makeSound() const;
     std::string getType() const;
-    ~Animal();
+    virtual ~Animal();
 };
 
 #endif
