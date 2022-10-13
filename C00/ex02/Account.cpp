@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:37:11 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/13 04:19:35 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/13 05:57:43 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	Account::makeDeposit( int deposit )
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
-{
+{	
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	if (_amount < 100)
@@ -107,6 +107,14 @@ int Account::getNbDeposits(void)
 int	Account::getNbWithdrawals(void)
 {
 	return (_totalNbWithdrawals);
+}
+
+void	Account::_displayTimestamp( void )
+{
+	time_t	timer;
+
+	time(&timer);
+	std::cout << timer;
 }
 
 void	Account::displayAccountsInfos(void)
