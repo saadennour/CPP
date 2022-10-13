@@ -83,6 +83,9 @@ int	Account::checkAmount(void) const
 
 void	Account::displayStatus( void ) const
 {
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";deposit:" << this->_nbDeposits;
@@ -111,10 +114,19 @@ int	Account::getNbWithdrawals(void)
 
 void	Account::_displayTimestamp( void )
 {
-	time_t	timer;
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
 
-	time(&timer);
-	std::cout << timer;
+	std::cout << 1900 + ltm->tm_year;
+	if (ltm->tm_mon < 9)
+		std::cout << "0";
+	std::cout << 1 + ltm->tm_mon;
+	std::cout << ltm->tm_mday << "_";
+	std::cout << ltm->tm_hour;
+	if (ltm->tm_min < 10)
+		std::cout << "0";
+	std::cout << ltm->tm_min;
+	std::cout << ltm->tm_sec;
 }
 
 void	Account::displayAccountsInfos(void)
