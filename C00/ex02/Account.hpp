@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:36:59 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 02:28:29 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/13 00:36:41 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
-
-	int		getindex(void);
-	int		getamount(void);
-	int		getndeposits(void);
-	int		getnwithdrawals(void);
 
 private:
 
