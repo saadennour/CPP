@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:36:40 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/13 04:20:21 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 01:39:13 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		main( void ) {
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
-
+	
 	return 0;
 }
 

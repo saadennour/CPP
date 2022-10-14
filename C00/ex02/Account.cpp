@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:37:11 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/13 05:57:43 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 01:35:55 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(void)
 {
+	_displayTimestamp();
 	std::cout << "Default constructor has been called\n";
 }
 
 Account::Account(int initial_deposit)
 {
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	static int index;
 	_amount = initial_deposit;
 	_nbDeposits = 0;
@@ -39,6 +43,9 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";closed\n";
@@ -46,6 +53,9 @@ Account::~Account(void)
 
 void	Account::makeDeposit( int deposit )
 {
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	_amount += deposit;
@@ -58,7 +68,10 @@ void	Account::makeDeposit( int deposit )
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
-{	
+{
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";p_amount:" << _amount;
 	if (_amount < 100)
@@ -121,16 +134,25 @@ void	Account::_displayTimestamp( void )
 	if (ltm->tm_mon < 9)
 		std::cout << "0";
 	std::cout << 1 + ltm->tm_mon;
+	if (ltm->tm_mday < 10)
+		std::cout << "0";
 	std::cout << ltm->tm_mday << "_";
+	if (ltm->tm_hour < 10)
+		std::cout << "0";	
 	std::cout << ltm->tm_hour;
 	if (ltm->tm_min < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_min;
+	if (ltm->tm_sec < 10)
+		std::cout << "0";
 	std::cout << ltm->tm_sec;
 }
 
 void	Account::displayAccountsInfos(void)
 {
+	std::cout << "[";
+	_displayTimestamp();
+	std::cout << "] ";
 	std::cout << "accounts:" << getNbAccounts() ;
 	std::cout << ";total:" << getTotalAmount();
 	std::cout << ";deposits:" << getNbDeposits();
