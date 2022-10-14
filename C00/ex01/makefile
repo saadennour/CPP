@@ -3,7 +3,8 @@ NAME = Phonebook
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRCS = phonebook.cpp \
-	   options.cpp	\
+	   Contact.cpp \
+	   main.cpp \
 
 all : $(NAME)
 

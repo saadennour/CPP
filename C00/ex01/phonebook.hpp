@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:58 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 11:25:59 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 02:09:55 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,18 @@
 #define PHONEBOOK_H
 
 #include <iostream>
-
-class Contact
-{
-public:
-    std::string firstname;
-    std::string lastname;
-    std::string nickname;
-    std::string phonenumber;
-    std::string darkest_secret;
-};
+#include "Contact.hpp"
 
 class PhoneBook
 {
-public:
+private :
     Contact contact[8];
+public :
+	void	add(void);
+	void	search(void);
+	void	init_contact(int i);
 };
 
-void	add(PhoneBook *contacts);
-void	search(PhoneBook *contacts);
 int     ft_stoi(std::string str);
 
 #endif
