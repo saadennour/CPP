@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:15:57 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:59:57 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 22:45:32 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,13 @@ class Zombie
 private:
 	std::string	name;
 public:
-	Zombie(){};
-	Zombie(std::string value)
-	{
-		name = value;
-	}
-
-	std::string	getter()
-	{
-		return name;
-	}
-
+	Zombie();
+	Zombie(std::string value);
+	
+	std::string	getter();
 	void	announce(void);
-	~Zombie(){
-		std::cout << name << " has been destroyed" << std::endl;
-	}
+	
+	~Zombie();
 };
 
 Zombie	*zombieHorde(int N, std::string name);

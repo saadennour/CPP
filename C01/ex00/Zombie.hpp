@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:53 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:54:36 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 22:41:21 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,13 @@ class Zombie
 private:
 	std::string	name;
 public:
-	Zombie(std::string value)
-	{
-		name = value;
-	}
-	std::string	getter()
-	{
-		return name;
-	}
+	Zombie(std::string value);
+	std::string	getter(void);
 	void	announce(void);
-	~Zombie(){
-		std::cout << name << " object has been destroyed" << std::endl;
-	}
+	~Zombie();
 };
 
-Zombie	*newZombie(std::string name);
 void	randomChump(std::string name);
+Zombie	*newZombie(std::string name);
 
 #endif

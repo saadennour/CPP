@@ -6,13 +6,34 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 16:04:35 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 17:01:15 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 22:45:21 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+	std::cout << "Default constructor has been called\n";
+}
+
+Zombie::Zombie(std::string value)
+{
+	name = value;
+	std::cout << "Parameterized constructor has been called\n";
+}
+
+Zombie::~Zombie()
+{
+	std::cout << name << " has been destroyed" << std::endl;
+}
+
 void	Zombie::announce(void)
 {
 	std::cout << ": BraiiiiiiinnnzzzZ..." << "\n";
+}
+
+std::string	Zombie::getter()
+{
+	return (name);
 }
