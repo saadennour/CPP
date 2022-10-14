@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:58 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 02:09:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 04:24:01 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_H
 
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook

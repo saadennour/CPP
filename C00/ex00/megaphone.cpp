@@ -6,41 +6,27 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:26 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/11 22:29:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 04:12:07 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-std::string  is_upper(std::string str)
-{
-    int i;
-
-    i = 0;
-    while (str[i])
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
-        i++;
-    }
-    return (str);
-}
+#include <cctype>
 
 int main(int ac, char **av)
 {
-    int     i;
-    std::string  str;
-
-    i = 1;
     if (ac == 1)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     else
     {
-        while (av[i])
+        for (int i = 1; av[i]; i++)
         {
-            str = is_upper(av[i]);
-            std::cout << str;
-            i++;
+			for (int j = 0; av[i][j]; j++)
+			{ 
+				if (islower(av[i][j]))
+					av[i][j] = toupper(av[i][j]);
+            	std::cout << av[i][j];
+			}
         }
     }
     std::cout << "\n";

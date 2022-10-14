@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:41 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 02:08:57 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/14 04:32:07 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,20 +124,26 @@ void	PhoneBook::search(void)
 	int	index;
 	std::string	str;
 
-	std::cout << "Which contact you want to display : ";
-	getline(std::cin, str);
-	index = ft_stoi(str);
-	std::cout << index << "\n";
-	if (index > 7 || index < 0)
+	while (1)
 	{
-		std::cout << "The contact you choosed is not available\n";
-		return ;
+		std::cout << "Which contact you want to display : ";
+		getline(std::cin, str);
+		index = ft_stoi(str);
+		std::cout << index << "\n";
+		if (index > 7 || index < 0)
+		{
+			std::cout << "The contact you choosed is not available\n";
+			return ;
+		}
+		if (this->contact[index].getfirstname())
+		{
+			std::cout << index << " | ";
+			ft_putstr (this->contact[index].getfirstname());
+			std::cout << " | ";
+			ft_putstr (this->contact[index].getlastname());
+			std::cout << " | ";
+			ft_putstr (this->contact[index].getnickname());
+			std::cout << "\n";
+		}
 	}
-	std::cout << index << " | ";
-	std::cout << this->contact[index].getfirstname();
-	std::cout << " | ";
-	std::cout << this->contact[index].getlastname();
-	std::cout << " | ";
-	std::cout << this->contact[index].getnickname();
-	std::cout << "\n";
 }
