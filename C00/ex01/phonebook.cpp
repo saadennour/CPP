@@ -128,14 +128,21 @@ void	PhoneBook::search(void)
 	{
 		std::cout << "Which contact you want to display : ";
 		getline(std::cin, str);
+		for (unsigned long i = 0; i < str.length(); i++)
+		{
+			if (isalpha(str[i]))
+			{
+				std::cout << "An alphabetic input is not possible !\n";
+				return ;
+			}
+		}
 		index = ft_stoi(str);
-		std::cout << index << "\n";
 		if (index > 7 || index < 0)
 		{
 			std::cout << "The contact you choosed is not available\n";
 			return ;
 		}
-		if (this->contact[index].getfirstname())
+		if (this->contact[index].getfirstname().length() > 0)
 		{
 			std::cout << index << " | ";
 			ft_putstr (this->contact[index].getfirstname());
@@ -144,6 +151,11 @@ void	PhoneBook::search(void)
 			std::cout << " | ";
 			ft_putstr (this->contact[index].getnickname());
 			std::cout << "\n";
+		}
+		else
+		{
+			std::cout << "\nContact does not exist\n";
+			return ;
 		}
 	}
 }
