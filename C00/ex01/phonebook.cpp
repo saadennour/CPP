@@ -144,11 +144,18 @@ void	PhoneBook::search(void)
 		}
 		if (this->contact[index].getfirstname().length() > 0)
 		{
-			std::cout << index << " | ";
+			std::cout << std::setw(9);
+			std::cout << index << "|";
+			if (10 - this->contact[index].getfirstname().length() > 0)
+				std::cout << std::setw(10 - this->contact[index].getfirstname().length());
 			ft_putstr (this->contact[index].getfirstname());
-			std::cout << " | ";
+			std::cout << "|";
+			if (10 - this->contact[index].getlastname().length() > 0)
+				std::cout << std::setw(10 - this->contact[index].getlastname().length());
 			ft_putstr (this->contact[index].getlastname());
-			std::cout << " | ";
+			std::cout << "|";
+			if (10 - this->contact[index].getnickname().length() > 0)
+				std::cout << std::setw(10 - this->contact[index].getnickname().length());
 			ft_putstr (this->contact[index].getnickname());
 			std::cout << "\n";
 		}
