@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 18:37:11 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 01:35:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/17 01:29:27 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ Account::Account(int initial_deposit)
 	_totalAmount += initial_deposit;
 	_nbAccounts++;
 	index++;
-	std::cout << "index:" << this->_accountIndex;
-	std::cout << ";amount:" << this->_amount;
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
 	std::cout << ";created\n";
 }
 
@@ -46,8 +46,8 @@ Account::~Account(void)
 	std::cout << "[";
 	_displayTimestamp();
 	std::cout << "] ";
-	std::cout << "index:" << this->_accountIndex;
-	std::cout << ";amount:" << this->_amount;
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
 	std::cout << ";closed\n";
 }
 
@@ -91,7 +91,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 int	Account::checkAmount(void) const
 {
-	return (this->_amount);
+	return (_amount);
 }
 
 void	Account::displayStatus( void ) const
@@ -99,10 +99,10 @@ void	Account::displayStatus( void ) const
 	std::cout << "[";
 	_displayTimestamp();
 	std::cout << "] ";
-	std::cout << "index:" << this->_accountIndex;
-	std::cout << ";amount:" << this->_amount;
-	std::cout << ";deposit:" << this->_nbDeposits;
-	std::cout << ";withdrawals:" << this->_nbWithdrawals << "\n";
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";deposits:" << _nbDeposits;
+	std::cout << ";withdrawals:" << _nbWithdrawals << "\n";
 }
 
 int	Account::getNbAccounts( void )

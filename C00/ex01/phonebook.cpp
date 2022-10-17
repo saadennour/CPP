@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:41 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 04:32:07 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/17 03:01:47 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,13 @@ int ft_stoi(std::string str)
     return (res);
 }
 
-int	Contact::empty_fields()
-{
-	if (this->firstname.length() == 0 || this->lastname.length() == 0
-		|| this->nickname.length() == 0 || this->phonenumber.length() == 0
-		|| this->darkest_secret.length() == 0)
-		return (0);
-	return (1);
-}
-
 void	PhoneBook::init_contact(int i)
 {
-	this->contact[i].setfirstname("");
-	this->contact[i].setlastname("");
-	this->contact[i].setnickname("");
-	this->contact[i].setnumber("");
-	this->contact[i].setsecret("");
+	contact[i].setfirstname("");
+	contact[i].setlastname("");
+	contact[i].setnickname("");
+	contact[i].setnumber("");
+	contact[i].setsecret("");
 }
 
 void	ft_putstr(std::string str)
@@ -97,23 +88,23 @@ void	PhoneBook::add()
 		i = 0;
 	std::cout << "Enter the first name : ";
 	getline(std::cin, input);
-	this->contact[i].setfirstname(input);
+	contact[i].setfirstname(input);
 	std::cout << "Enter the last name : ";
 	getline(std::cin, input);
-	this->contact[i].setlastname(input);
+	contact[i].setlastname(input);
 	std::cout << "Enter the nickname : ";
 	getline(std::cin, input);
-	this->contact[i].setnickname(input);
+	contact[i].setnickname(input);
 	std::cout << "Enter the phone number : ";
 	getline(std::cin, input);
-	this->contact[i].setnumber(input);
+	contact[i].setnumber(input);
 	std::cout << "Enter the darkest secret : ";
 	getline(std::cin, input);
-	this->contact[i].setsecret(input);
-	if (this->contact[i].empty_fields() == 0)
+	contact[i].setsecret(input);
+	if (contact[i].empty_fields() == 0)
 	{
-		std::cout << "You have entered an empty field, try again !\n";
-		this->init_contact(i);
+		std::cout << "\nYou have entered an empty field, try again !\n";
+		init_contact(i);
 		return ;
 	}
 	i++;
@@ -142,21 +133,24 @@ void	PhoneBook::search(void)
 			std::cout << "The contact you choosed is not available\n";
 			return ;
 		}
-		if (this->contact[index].getfirstname().length() > 0)
+		if (contact[index].getfirstname().length() > 0)
 		{
-			std::cout << std::setw(9);
+			std::cout << std::setw(10);
 			std::cout << index << "|";
-			if (10 - this->contact[index].getfirstname().length() > 0)
-				std::cout << std::setw(10 - this->contact[index].getfirstname().length());
-			ft_putstr (this->contact[index].getfirstname());
+			if (contact[index].getfirstname().length() < 10)
+				std::cout << std::setw(10) << contact[index].getfirstname();
+			else
+				ft_putstr (contact[index].getfirstname());
 			std::cout << "|";
-			if (10 - this->contact[index].getlastname().length() > 0)
-				std::cout << std::setw(10 - this->contact[index].getlastname().length());
-			ft_putstr (this->contact[index].getlastname());
+			if (contact[index].getlastname().length() < 10)
+				std::cout << std::setw(10) << contact[index].getlastname();
+			else
+				ft_putstr (contact[index].getlastname());
 			std::cout << "|";
-			if (10 - this->contact[index].getnickname().length() > 0)
-				std::cout << std::setw(10 - this->contact[index].getnickname().length());
-			ft_putstr (this->contact[index].getnickname());
+			if (contact[index].getnickname().length() < 10)
+				std::cout << std::setw(10) << contact[index].getnickname();
+			else
+				ft_putstr (contact[index].getnickname());
 			std::cout << "\n";
 		}
 		else

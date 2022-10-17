@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 01:43:58 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 01:58:17 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/17 01:21:56 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,13 @@ std::string	Contact::getnumber()
 std::string	Contact::getsecret()
 {
 	return (this->darkest_secret);
+}
+
+int	Contact::empty_fields()
+{
+	if (this->firstname.length() == 0 || this->lastname.length() == 0
+		|| this->nickname.length() == 0 || this->phonenumber.length() == 0
+		|| this->darkest_secret.length() == 0)
+		return (0);
+	return (1);
 }
