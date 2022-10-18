@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:37:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 22:54:54 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 05:35:31 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,13 @@ private:
 	std::string	name;
 	Weapon		*weapon;
 public:
-	HumanB(std::string call){
-		name = call;
-	};
-	std::string getName(){
-		return (name);
-	}
-	std::string	getWeapon(){
-		return (weapon->getType());
-	}
-	void	setWeapon(Weapon *arm){
-		weapon = arm;
-	}
+	HumanB();
+	HumanB(std::string call);
+	std::string getName();
+	std::string	getWeapon();
+	void	setWeapon(Weapon *arm);
 	void	attack();
-	~HumanB(){};
+	~HumanB();
 };
 
 #endif

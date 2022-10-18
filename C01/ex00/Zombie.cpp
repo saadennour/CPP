@@ -6,12 +6,16 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:31:06 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/18 03:57:10 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 05:15:09 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+	std::cout << "Default constructor of Zombie has been called\n";
+}
 
 Zombie::Zombie(std::string value)
 {

@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:53 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 22:41:21 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 05:15:20 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Zombie
 private:
 	std::string	name;
 public:
+	Zombie();
 	Zombie(std::string value);
 	std::string	getter(void);
 	void	announce(void);

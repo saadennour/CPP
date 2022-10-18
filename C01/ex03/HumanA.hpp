@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:51:20 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/12 22:54:37 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 05:36:11 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,13 @@ class HumanA
 {
 private:
 	std::string	name;
-	Weapon		*weapon;
+	Weapon		&weapon;
 public:
-	HumanA(std::string call, Weapon *arm){
-		name = call;
-		weapon = arm ;
-	};
-	std::string	getName(){
-		return (name);
-	};
-	std::string	getWeapon(){
-		return (weapon->getType());
-	};
+	HumanA(std::string call, Weapon &arm);
+	std::string	getName();
+	std::string	getWeapon();
 	void	attack();
-	~HumanA(){};
+	~HumanA();
 };
 
 #endif
