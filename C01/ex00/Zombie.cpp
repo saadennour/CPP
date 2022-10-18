@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 14:31:06 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/14 22:40:11 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 03:57:10 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ std::string	Zombie::getter(void)
 
 void	Zombie::announce(void)
 {
+	std::cout << this->getter();
 	std::cout << ": BraiiiiiiinnnzzzZ..." << "\n";
 }

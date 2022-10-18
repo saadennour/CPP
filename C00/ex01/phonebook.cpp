@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 11:25:41 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/17 03:01:47 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/18 02:17:45 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,26 @@ void	PhoneBook::search(void)
 	int	index;
 	std::string	str;
 
+	for (int i = 0; contact[i].getlastname().length() > 0; i++)
+	{
+		std::cout << std::setw(10);
+		std::cout << i << "|";
+		if (contact[i].getfirstname().length() < 10)
+			std::cout << std::setw(10) << contact[i].getfirstname();
+		else
+			ft_putstr (contact[i].getfirstname());
+		std::cout << "|";
+		if (contact[i].getlastname().length() < 10)
+			std::cout << std::setw(10) << contact[i].getlastname();
+		else
+			ft_putstr (contact[i].getlastname());
+		std::cout << "|";
+		if (contact[i].getnickname().length() < 10)
+			std::cout << std::setw(10) << contact[i].getnickname();
+		else
+			ft_putstr (contact[i].getnickname());
+		std::cout << "\n";
+	}
 	while (1)
 	{
 		std::cout << "Which contact you want to display : ";
@@ -135,23 +155,11 @@ void	PhoneBook::search(void)
 		}
 		if (contact[index].getfirstname().length() > 0)
 		{
-			std::cout << std::setw(10);
-			std::cout << index << "|";
-			if (contact[index].getfirstname().length() < 10)
-				std::cout << std::setw(10) << contact[index].getfirstname();
-			else
-				ft_putstr (contact[index].getfirstname());
-			std::cout << "|";
-			if (contact[index].getlastname().length() < 10)
-				std::cout << std::setw(10) << contact[index].getlastname();
-			else
-				ft_putstr (contact[index].getlastname());
-			std::cout << "|";
-			if (contact[index].getnickname().length() < 10)
-				std::cout << std::setw(10) << contact[index].getnickname();
-			else
-				ft_putstr (contact[index].getnickname());
-			std::cout << "\n";
+			std::cout << "\nFIRSTNAME      : " << contact[index].getfirstname() << "\n";
+			std::cout << "LASTNAME       : " << contact[index].getlastname() << "\n";
+			std::cout << "NICKNAME       : " << contact[index].getnickname() << "\n";
+			std::cout << "PHONENUMBER    : " << contact[index].getnumber() << "\n";
+			std::cout << "DARKEST_NUMBER : " << contact[index].getsecret() << "\n\n";
 		}
 		else
 		{
