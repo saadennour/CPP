@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/15 05:12:16 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/20 07:19:12 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 char	*fill_str(char *ptr, char *word, char **av)
 {
-	int	i, j, x;
-	int	len;
-	char	*new_word;
+	int	i=0, j=0, x=0;
+	int	len = strlen(av[3]) + (strlen(word) - strlen(av[2]));
+	char	*new_word = new char[len];
 
-	i = 0;
-	j = 0;
-	x = 0;
-	len = strlen(av[3]) + strlen(word);
-	new_word = new char[len];
 	while (i < ptr - word)
 		new_word[i++] = word[j++];
 	while (av[3][x])
@@ -36,16 +31,13 @@ char	*fill_str(char *ptr, char *word, char **av)
 
 void	replace_word(std::string line, char **av)
 {
-	int	i;
-	int	j;
-	int	len;
-	char	*word;
+	int i = 0, j = 0;
+	int	len = line.length() + strlen(av[3]);
+	char	*word = new char[len];
 	char	*ptr;
 	char	copy_file[100] = "nothing";
 	std::fstream	file;
 
-	len = line.length();
-	i = 0;
 	strcpy(copy_file, av[1]);
 	strcat(copy_file, ".replace");
 	file.open(copy_file, std::ios::out | std::ios::app);
@@ -56,28 +48,33 @@ void	replace_word(std::string line, char **av)
 	}
 	while (1)
 	{
-		j = 0;
-		word = new char[len];
+		ptr = NULL;
 		while (i < len)
 		{
 			if (line[i] == ' ' || line[i] == '\t')
+			{
+				word[j] = '\0';
 				break ;
+			}
 			word[j++] = line[i++];
 		}
-		word[j] = '\0';
 		ptr = strstr(word, av[2]);
-		if (ptr && j != 0)
-			file << fill_str(ptr, word, av);
-		else
-			file << word;
+		if (ptr)
+		{
+			word = fill_str(ptr, word, av);
+			for (size_t x = j; x < strlen(word); x++)
+				j = x;
+			j++;
+		}
 		if (line[i] == ' ' || line[i] == '\t')
-			file << line[i];
-		delete [] word;
+			word[j++] = line[i];
 		i++;
 		if (i >= len)
 		{
-			file << "\n";
+			word[j] = '\0';
+			file << word << "\n";
 			file.close();
+			delete [] word;
 			break ;
 		}
 	}
@@ -86,7 +83,7 @@ void	replace_word(std::string line, char **av)
 int main(int ac, char **av)
 {
 	std::fstream	file;
-	std::string		word;
+	std::string		line;
 
 	if (ac != 4)
 	{
@@ -96,14 +93,13 @@ int main(int ac, char **av)
 	file.open(av[1], std::ios::in);
 	if (!file)
 	{
-		std::cout << "There is no such in this directory !" << std::endl;
+		std::cout << "There is no such file in this directory or the file couldn't open !" << std::endl;
 		return (1);
 	}
 	while (!file.eof())
 	{
-		std::getline(file, word);
-		std::cout << word << "\n";
-		replace_word(word, av);
+		std::getline(file, line);
+		replace_word(line, av);
 	}
 	return (0);
 }
