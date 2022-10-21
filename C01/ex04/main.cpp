@@ -36,14 +36,14 @@ char	*fill_str(char *ptr, char *word, char **av, int *index)
 	for (size_t x = 0; right[x] != '\0' ; x++)
 		word[i++] = right[x];
 	*index = i;
-	std::cout << word << "|\n\n";
+	std::cout << word << "| " << *index << "\n\n";
 	return (word);
 }
 
 void	replace_word(std::string line, char **av)
 {
 	int i = 0, j = 0;
-	int	len = (line.length() - strlen(av[2])) + strlen(av[3]) + 1;
+	int	len = (line.length()) + strlen(av[3]) + 1;
 	char	*word = new char[42];
 	char	copy_file[100000] = "";
 	char	*ptr = NULL;
@@ -74,6 +74,8 @@ void	replace_word(std::string line, char **av)
 		word[j++] = line[i++];
 	}
 	word[j] = '\0';
+	std::cout << "\n\n************LLL\n" << line << "\n len = " << len << "\n\n**************\n\n";
+	std::cout << "\n\n************\n" << word << "\n i = " << strlen(word) << "\n\n**************\n\n";
 	file << word << "\n";
 	file.close();
 	// delete [] word;
