@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 15:57:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/09/08 16:04:30 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/21 00:06:36 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 Zombie	*zombieHorde(int N, std::string name)
 {
-	Zombie	*horde;
-	int		i;
+	Zombie	*horde = new Zombie[N];
 
-	i = 0;
-	horde = new Zombie[N];
-	while (i < N)
-	{
+	for (int i = 0; i < N; i++)
 		horde[i] = Zombie(name);
-		i++;
-	}
 	return (horde);
 }

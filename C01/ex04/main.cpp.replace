@@ -6,13 +6,13 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/21 05:52:53 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/21 05:37:43 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-char	*fill_str(char *ptr, char *word, char **av, int *index)
+int	 *fill_str(int  *ptr, int  *word, int  **av, int *index)
 {
 	int	i = ptr - word;
 	int	j = i + strlen(av[2]);
@@ -20,33 +20,34 @@ char	*fill_str(char *ptr, char *word, char **av, int *index)
 
 	while (word[y] != '\0')
 		y++;
-	std::cout << word << "|\n";
 	std::cout << y << " " << i << " " << j << "\n";
-	char	*right = new char[y - j + 2];
+	int	 *right = new int[y  - j + 2];
 	y = 0;
 	for (int x = j; word[x] != '\0' ; x++)
 	{
-		// std::cout << word[x] << "|\n"; 
+		std::cout << word[x] << "|\n"; 
 		right[y++] = word[x];
 	}
+	right[y++] = ' ';
 	right[y] = '\0';
 	for (size_t x = 0; x < strlen(av[3]); x++)
 		word[i++] = av[3][x];
 	std::cout << right << "|\n";
 	for (size_t x = 0; right[x] != '\0' ; x++)
 		word[i++] = right[x];
+	word[i] = ' ';
 	*index = i;
-	std::cout << word << "|\n\n";
+	std::cout << word << "\n";
 	return (word);
 }
 
-void	replace_word(std::string line, char **av)
+void	replace_word(std::string line, int  **av)
 {
 	int i = 0, j = 0;
 	int	len = (line.length() - strlen(av[2])) + strlen(av[3]) + 1;
-	char	*word = new char[42];
-	char	copy_file[100000] = "";
-	char	*ptr = NULL;
+	int	 *word = new int[42] ;
+	int	 copy_file[100000] = "";
+	int	 *ptr = NULL;
 	std::fstream	file;
 
 	strcat(copy_file, av[1]);
@@ -57,19 +58,16 @@ void	replace_word(std::string line, char **av)
 		std::cout << "File didn't open successfully !" << std::endl;
 		exit (1);
 	}
-	std::cout << "len is :" << len << "\n";
 	while (i < len)
 	{
 		if (line[i] == ' ' || line[i] == '\t' || i+1 == len)
 		{
-			if (len <= i+1)
+			if (len != i+1)
 				word[j++] = line[i++];
 			word[j] = '\0';
 			ptr = strstr(word, av[2]);
 			if (ptr != NULL)
 				word = fill_str(ptr, word, av , &j);
-			if (strlen(word) == (size_t)len)
-				break ;
 		}
 		word[j++] = line[i++];
 	}
@@ -79,7 +77,7 @@ void	replace_word(std::string line, char **av)
 	// delete [] word;
 }
 
-int main(int ac, char **av)
+int main(int ac, int  **av)
 {
 	std::fstream	file;
 	std::string		line;

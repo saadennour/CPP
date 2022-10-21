@@ -1,0 +1,19 @@
+interE = Sed
+
+FLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRCS =	main.cpp \
+
+all : $(interE)
+
+$(interE) : $(SRCS)
+		c++ $(FLAGS) $(SRCS) -o Sed
+
+clean :
+		rm -rf $(interE)
+
+fclean :
+		rm -rf $(interE)
+
+re : fclean all
+
