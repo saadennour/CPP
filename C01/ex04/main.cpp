@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 05:43:46 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/22 13:52:25 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	replace_word(std::string line, char **av)
 	size_t	occ, len, focc;
 
 	name = av[1] + (std::string)".replace";
-	file.open(name, std::ios::in | std::ios::app);
+	file.open(name, std::ios::out | std::ios::app);
 	if (!file)
 	{
 		std::cout << "The file couldn't open !" << std::endl;
@@ -75,5 +75,6 @@ int main(int ac, char **av)
 		std::getline(file, line);
 		replace_word(line, av);
 	}
+	file.close();
 	return (0);
 }
