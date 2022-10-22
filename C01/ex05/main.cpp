@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 03:43:35 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/20 07:22:57 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/22 05:21:44 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@ int main()
 	Harl		customer;
 
 	customer.complain("ERROR");
+	customer.complain("DEBUG");
 	return (0);
 }
