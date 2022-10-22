@@ -17,8 +17,8 @@ public :
 
 	Fixed&	operator=(const Fixed &copy);
 	Fixed	operator+(const Fixed &copy);
-	Fixed	operator-(const Fixed &copy);
-	Fixed	operator*(const Fixed &copy);
+	Fixed	operator-(const Fixed &copy) const;
+	Fixed	operator*(const Fixed &copy) const;
 	Fixed	operator/(const Fixed &copy);
 
 	bool	operator>(const Fixed &copy);

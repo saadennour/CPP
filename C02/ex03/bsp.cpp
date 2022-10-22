@@ -1,18 +1,26 @@
 #include "Point.hpp"
 
+float	Point::Area(Point a, Point b, Point c)
+{
+	Fixed	Area;
+
+	Area = (a.x*(b.y - c.y) + b.x*(c.y - a.y) + c.x*(a.y - b.y))/2;
+	if (Area.toFloat() < 0)
+		return (Area.toFloat() * -1);
+	return (Area.toFloat());
+}
+
 bool    Point::bsp(Point const a, Point const b, Point const c, Point const point)
 {
-    Fixed max_x;
-    Fixed max_y;
+	float	abc, pab, pac, pbc;
 
-    max_x = Fixed::const_max(a.x, b.x);
-    max_x = Fixed::const_max(max_x, c.x);
-    max_y = Fixed::const_max(a.y, b.y);
-    max_y = Fixed::const_max(max_y, c.y);
+	abc = roundf(Area(a, b, c));
+	pab = roundf(Area(point, a, b));
+	pac = roundf(Area(point, a, c));
+	pbc = roundf(Area(point, b, c));
 
-    if ((Fixed)Fixed::const_max(max_x, point.x) == point.x)
+    if (abc == pab + pac + pbc && abc != 0)
+        return (1);
+    else
         return (0);
-    if ((Fixed)Fixed::const_max(max_y, point.y) == point.y)
-        return (0);
-    return (1);
 }

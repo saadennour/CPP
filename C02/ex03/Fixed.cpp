@@ -3,30 +3,30 @@
 Fixed::Fixed()
 {
 	nvalue = 0;
-	std::cout << "Default constructor called\n";
+	std::cout << "Fixed Default constructor called\n";
 }
 
 Fixed::Fixed(const int data)
 {
 	nvalue = (data << nfbits);
-	std::cout << "Int constructor called\n";
+	std::cout << "Fixed Int constructor called\n";
 }
 
 Fixed::Fixed(const float data)
 {
 	nvalue = data * (1 << nfbits);
-	std::cout << "Float constructor called\n";
+	std::cout << "Fixed Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed &a)
 {
-	std::cout << "Copy constructor called\n";
+	std::cout << "Fixed Copy constructor called\n";
 	*this = a;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	std::cout << "Fixed Destructor called\n";
 }
 
 int		Fixed::toInt(void) const
@@ -97,7 +97,7 @@ Fixed	Fixed::operator+(const Fixed &copy)
 	return (tmp);
 }
 
-Fixed	Fixed::operator-(const Fixed &copy)
+Fixed	Fixed::operator-(const Fixed &copy) const
 {
 	Fixed	tmp;
 
@@ -105,7 +105,7 @@ Fixed	Fixed::operator-(const Fixed &copy)
 	return (tmp);
 }
 
-Fixed	Fixed::operator*(const Fixed &copy)
+Fixed	Fixed::operator*(const Fixed &copy) const
 {
 	Fixed	tmp;
 

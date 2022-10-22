@@ -17,6 +17,7 @@ public:
     Point&  operator=(const Point& copy);
 
     bool    bsp(Point const a, Point const b, Point const c, Point const point);
+	float	Area(Point a, Point b, Point c);
     Fixed   getXpoint();
     Fixed   getYpoint();
     ~Point();
