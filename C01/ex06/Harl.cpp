@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:27:39 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/20 07:31:38 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/22 05:42:19 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,6 @@ void	Harl::complain(std::string level)
 		case 'E' :
 			Harl::error();
 			break ; 
-		default:
-			std::cout << "There is no complain like that !" << "\n";
-			break;
 	}
 	exit (0);
 }

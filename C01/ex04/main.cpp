@@ -6,11 +6,12 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 05:15:10 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/22 05:43:46 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#include <iostream>
+#include <fstream>
 
 void	replace_word(std::string line, char **av)
 {
