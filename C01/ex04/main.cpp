@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:27:55 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 13:52:25 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/23 10:30:52 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	replace_word(std::string line, char **av)
 {
 	std::fstream	file;
 	std::string		name;
-	std::string		before;
-	std::string		after;
-	std::string		input;
-	size_t	occ, len, focc;
+	size_t	occ;
 
 	name = av[1] + (std::string)".replace";
 	file.open(name, std::ios::out | std::ios::app);
@@ -30,27 +27,13 @@ void	replace_word(std::string line, char **av)
 		exit (1);
 	}
 	occ = line.find(av[2]);
-	if (occ != std::string::npos)
+	while (occ != std::string::npos)
 	{
-		if (occ > 0)
-		{
-			before = line.substr(0, occ);
-			input = before;
-		}
-		while (occ != std::string::npos)
-		{
-			input += av[3];
-			focc = occ;
-			occ = line.find(av[2], strlen(av[2]) + occ);
-			len = occ - (focc + strlen(av[2]));
-			after = line.substr(focc + strlen(av[2]), len);
-			input += after;
-		}
-		file << input;
+		line.erase(occ, strlen(av[2]));
+		line.insert(occ, av[3]);
+		occ = line.find(av[2], occ + strlen(av[3]));
 	}
-	else
-		file << line;
-	file << "\n";
+	file << line << "\n";
 	file.close();	
 }
 

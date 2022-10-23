@@ -4,7 +4,7 @@ int main()
 {
     ClapTrap    aemon("aemon");
     ClapTrap    vis(aemon);
-    ClapTrap    ana("eagon");
+    ClapTrap    ana("aegon");
 
     vis = ana;
     for(int i = 0; i <= 10; i++)

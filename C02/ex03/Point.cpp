@@ -22,6 +22,7 @@ Point::~Point()
 
 Point&  Point::operator=(const Point& copy)
 {
+	std::cout << "Point Copy assignment operator called\n";
     (Fixed)this->x = copy.x;
     (Fixed)this->y = copy.y;
     return (*this);
