@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 03:43:59 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 06:14:12 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/24 10:32:32 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,11 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	std::string	acts[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	int	i = 0;
 	waitress	ptr[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	while (i < 4)
+	for (int i = 0; i < 4; i++)
 	{
 		if (acts[i] == level)
 			(this->*ptr[i]) ();
-		i++;
 	}
 }

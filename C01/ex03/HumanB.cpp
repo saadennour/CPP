@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:51:34 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/23 09:52:07 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/23 11:23:52 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ HumanB::HumanB()
 HumanB::HumanB(std::string call)
 {
 	name = call;
+	weapon = nullptr;
 	std::cout << "Parameterized constructor of HumanB has been called\n";	
 }
 
@@ -30,6 +31,11 @@ std::string	HumanB::getName()
 
 std::string	HumanB::getWeapon()
 {
+	if (weapon == nullptr)
+	{
+		std::cout << "\n\nUse of uninitialized pointer !!\n";
+		exit (0);
+	}
 	return (weapon->getType());
 }
 

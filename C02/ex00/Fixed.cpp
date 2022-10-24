@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 02:57:15 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 08:54:13 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/24 15:09:29 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		Fixed::getRawBits(void) const
 Fixed& Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Copy assignment operator called\n";
-	this->nvalue = copy.nvalue;
+	this->nvalue = copy.getRawBits();
 	return *this;
 }
 

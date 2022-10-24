@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 01:27:39 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 05:42:19 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/24 09:06:34 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,12 @@ void	Harl::complain(std::string level)
 	{
 		case 'D':
 			Harl::debug();
-			Harl::info();
-			Harl::warning();
-			Harl::error();
-			break;
 		case 'I' :
 			Harl::info();
-			Harl::warning();
-			Harl::error();
-			break ;
 		case 'W' :
 			Harl::warning();
-			Harl::error();
-			break ;
 		case 'E' :
 			Harl::error();
-			break ; 
 	}
 	exit (0);
 }
