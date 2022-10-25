@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:47:05 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 09:43:42 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/25 13:07:03 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,30 @@
 Fixed::Fixed()
 {
 	nvalue = 0;
-	std::cout << "Default constructor called\n";
+	// std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(const int data)
 {
 	nvalue = (data << nfbits);
-	std::cout << "Int constructor called\n";
+	// std::cout << "Int constructor called\n";
 }
 
 Fixed::Fixed(const float data)
 {
 	nvalue = roundf(data * (1 << nfbits));
-	std::cout << "Float constructor called\n";
+	// std::cout << "Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed &a)
 {
-	std::cout << "Copy constructor called\n";
+	// std::cout << "Copy constructor called\n";
 	*this = a;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called\n";
+	// std::cout << "Destructor called\n";
 }
 
 int		Fixed::toInt(void) const
@@ -61,13 +61,13 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called\n";
+	// std::cout << "getRawBits member function called\n";
 	return this->nvalue;
 }
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-	std::cout << "Copy assignment operator called\n";
+	// std::cout << "Copy assignment operator called\n";
 	this->nvalue = copy.nvalue;
 	return *this;
 }

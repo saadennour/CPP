@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 12:38:22 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/25 17:00:44 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
@@ -17,8 +29,10 @@ public :
 
 	Fixed&	operator=(const Fixed &copy);
 	Fixed	operator+(const Fixed &copy);
+	Fixed	operator-(const Fixed &copy);
 	Fixed	operator-(const Fixed &copy) const;
 	Fixed	operator*(const Fixed &copy) const;
+	Fixed	operator*(const Fixed &copy);
 	Fixed	operator/(const Fixed &copy);
 
 	bool	operator>(const Fixed &copy);
@@ -26,6 +40,7 @@ public :
 	bool	operator>=(const Fixed &copy);
 	bool	operator<=(const Fixed &copy);
 	bool	operator==(const Fixed &copy);
+	bool	operator==(const Fixed &copy) const;
 	bool	operator!=(const Fixed &copy);
 
 	Fixed	operator++();

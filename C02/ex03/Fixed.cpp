@@ -1,32 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 12:38:09 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/25 17:00:57 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
 {
 	nvalue = 0;
-	std::cout << "Fixed Default constructor called\n";
+	// std::cout << "Fixed Default constructor called\n";
 }
 
 Fixed::Fixed(const int data)
 {
 	nvalue = (data << nfbits);
-	std::cout << "Fixed Int constructor called\n";
+	// std::cout << "Fixed Int constructor called\n";
 }
 
 Fixed::Fixed(const float data)
 {
 	nvalue = data * (1 << nfbits);
-	std::cout << "Fixed Float constructor called\n";
+	// std::cout << "Fixed Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed &a)
 {
-	std::cout << "Fixed Copy constructor called\n";
+	// std::cout << "Fixed Copy constructor called\n";
 	*this = a;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed Destructor called\n";
+	// std::cout << "Fixed Destructor called\n";
 }
 
 int		Fixed::toInt(void) const
@@ -49,13 +61,13 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called\n";
+	// std::cout << "getRawBits member function called\n";
 	return this->nvalue;
 }
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-	std::cout << "Fixed Copy assignment operator called\n";
+	// std::cout << "Fixed Copy assignment operator called\n";
 	this->nvalue = copy.nvalue;
 	return *this;
 }
@@ -97,11 +109,27 @@ Fixed	Fixed::operator+(const Fixed &copy)
 	return (tmp);
 }
 
+Fixed	Fixed::operator-(const Fixed &copy)
+{
+	Fixed	tmp;
+
+	tmp = this->toFloat() - copy.toFloat();
+	return (tmp);
+}
+
 Fixed	Fixed::operator-(const Fixed &copy) const
 {
 	Fixed	tmp;
 
 	tmp = this->toFloat() - copy.toFloat();
+	return (tmp);
+}
+
+Fixed	Fixed::operator*(const Fixed &copy)
+{
+	Fixed	tmp;
+
+	tmp = this->toFloat() * copy.toFloat();
 	return (tmp);
 }
 
@@ -150,6 +178,13 @@ bool	Fixed::operator<=(const Fixed &copy)
 }
 
 bool	Fixed::operator==(const Fixed &copy)
+{
+	if (this->nvalue == copy.nvalue)
+		return (1);
+	return (0);
+}
+
+bool	Fixed::operator==(const Fixed &copy) const
 {
 	if (this->nvalue == copy.nvalue)
 		return (1);
