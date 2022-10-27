@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 09:50:13 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/22 09:42:35 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/26 23:39:03 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(const int data)
 Fixed::Fixed(const float data)
 {
 	nvalue = roundf(data * (1 << nfbits));
-	std::cout << "Float constructor called\n";
+	std::cout << nvalue << " Float constructor called\n";
 }
 
 Fixed::Fixed(const Fixed &a)

@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 12:38:01 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/25 17:13:44 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:41:29 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 int main()
 {
     Point   one;
-    Point   two(3, -3);
-    Point   three(-3, -3);
-    Point   p(2, -2);
+    Point   two(10, 20);
+    Point   three(-10, 20);
+    Point   p(0, 10);
 	bool	result;
 
 	result = one.bsp(one, two, three, p);

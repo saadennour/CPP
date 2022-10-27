@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 08:59:26 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/25 16:14:26 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/26 23:40:04 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	Fixed a;
 	Fixed const b(10);
-	Fixed const c(42.42f);
+	Fixed const c(2.75f);
 	Fixed const d(b);
 	
 	a = Fixed(1234.4321f);

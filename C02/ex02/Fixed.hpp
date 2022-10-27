@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 10:46:34 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/25 13:04:52 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/26 23:34:51 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public :
 	bool	operator==(const Fixed &copy);
 	bool	operator!=(const Fixed &copy);
 
-	Fixed	operator++();
+	Fixed&	operator++();
 	Fixed	operator++(int);
 	Fixed	operator--();
 	Fixed	operator--(int);
