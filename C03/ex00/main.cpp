@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 04:29:21 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/27 22:33:31 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/29 21:04:50 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ int main()
     ClapTrap    aemon("aemon");
     ClapTrap    vis(aemon);
     ClapTrap    ana("aegon");
+	ClapTrap	warrior;
 
-    vis = ana;
+    warrior = vis = ana;
+	std::cout << std::endl;
+	warrior.beRepaired(20);
     for(int i = 0; i <= 10; i++)
 	{
         vis.attack("aemon");

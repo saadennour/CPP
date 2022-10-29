@@ -1,27 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/28 21:08:35 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/29 18:49:36 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
 {
-    std::cout << "DiamondTrap default constructor is called\n";
+	Hit_points = 100;
+	Energy_points = 50;
+	Attack_damage = 30;
+    std::cout << "Default constructor of DiamondTrap called\n";
 }
 
-DiamondTrap::DiamondTrap(std::string call)
+DiamondTrap::DiamondTrap(std::string call):ClapTrap(call+"_clap_name")
 {
     name = call;
-    ClapTrap::name = call + "_clap_name";
-    Hit_points = FragTrap::Hit_points;
-    Energy_points = ScavTrap::Energy_points;
-    Attack_damage = FragTrap::Attack_damage;
+	Hit_points = 100;
+	Energy_points = 50;
+	Attack_damage = 30;
+	std::cout << "Parameterized constructor of DiamondTrap called\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy)
 {
     *this = copy;
+	std::cout << "Copy constructor of DiamondTrap called\n";
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "Destructor of DiamondTrap is called\n";
+    std::cout << "Destructor of DiamondTrap called\n";
 }
 
 DiamondTrap&    DiamondTrap::operator=(const DiamondTrap& copy)

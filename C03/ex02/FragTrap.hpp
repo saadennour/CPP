@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/28 20:59:29 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/29 21:11:36 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
 #include <iostream>
-#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
