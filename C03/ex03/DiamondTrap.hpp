@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 21:08:07 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/29 18:36:05 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/29 21:59:27 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ private:
 public:
     DiamondTrap();
     DiamondTrap(std::string call);
-    DiamondTrap(const DiamondTrap& copy);
+    // DiamondTrap(const DiamondTrap& copy);
 
-    DiamondTrap&    operator=(const DiamondTrap& copy);
+    // DiamondTrap&    operator=(const DiamondTrap& copy);
 
     void    attack(const std::string& target);
     void    whoAmI();

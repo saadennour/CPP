@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 21:07:59 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/28 21:08:00 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/29 21:57:44 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap: virtual public ClapTrap
+class ScavTrap: public ClapTrap
 {
 public:
     ScavTrap();
