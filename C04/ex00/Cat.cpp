@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:38:46 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:38:47 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:36:14 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Cat::Cat()
 {
     type = "Cat";
     std::cout << "Default constructor of Cat is called\n";
+}
+
+Cat::Cat(std::string name)
+{
+    type = name;
+    std::cout << "Parameterized constructor of Cat is called\n";
 }
 
 Cat::Cat(const Cat& copy)
@@ -37,10 +43,5 @@ Cat::~Cat()
 
 void    Cat::makeSound() const
 {
-    std::cout << "meow....meow....meow\n";
+	std::cout << "meow....meow....meow\n";
 }
-
-// std::string Cat::getType()
-// {
-//     return (this->type);
-// }

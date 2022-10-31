@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:42 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:39:43 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 00:18:21 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,17 @@ Cat::~Cat()
     std::cout << "Destructor of Cat is called\n";
 }
 
+void	Cat::setThought(std::string Thought, int N)
+{
+	thoughts->setIdea(Thought, N);
+}
+
+std::string	Cat::getThought(int N)
+{
+	return (thoughts->getIdea(N));
+}
+
 void    Cat::makeSound() const
 {
     std::cout << "meow....meow....meow\n";
 }
-
-// std::string Cat::getType()
-// {
-//     return (this->type);
-// }

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:39:46 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 00:18:55 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/10/30 16:18:46 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/30 16:52:59 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef	WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
-private:
-    Brain   *thoughts;
 public:
-    Cat();
-    Cat(const Cat& copy);
+    WrongCat();
+    WrongCat(const WrongCat& copy);
 
-    Cat& operator=(const Cat& copy);
+    WrongCat& operator=(const WrongCat& copy);
 
-	void	setThought(std::string Thought, int N);
-	std::string	getThought(int N);
     void    makeSound() const;
-    ~Cat();
+    ~WrongCat();
 };
 
 #endif

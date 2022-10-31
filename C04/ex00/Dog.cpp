@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:38:54 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:38:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:36:23 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Dog::Dog()
 {
     type = "Dog";
     std::cout << "Default constructor of Dog is called\n";
+}
+
+Dog::Dog(std::string name)
+{
+    type = name;
+    std::cout << "Parameterized constructor of Dog is called\n";
 }
 
 Dog::Dog(const Dog& copy)
@@ -39,8 +45,3 @@ void    Dog::makeSound() const
 {
     std::cout << "hoof....hoof....hoof\n";
 }
-
-// std::string Dog::getType()
-// {
-//     return (this->type);
-// }

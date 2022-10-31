@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:33 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:39:34 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 00:17:34 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,27 @@ Brain::Brain(const Brain& copy)
     *this = copy;
 }
 
-// Brain&  Brain::operator=(const Brain& copy)
-// {
-//     this->ideas = copy.ideas;
-//     return (*this);
-// }
+Brain&  Brain::operator=(const Brain& copy)
+{
+	for (int i = 0; i < 100; i++)
+    	this->ideas[i] = copy.ideas[i];
+    return (*this);
+}
 
 Brain::~Brain()
 {
     std::cout << "Destructor of Brain is called\n";
+}
+
+std::string	Brain::getIdea(int N)
+{
+	if (N >= 0 && N < 100)
+		return (ideas[N]);
+	return (ideas[0]);
+}
+
+void	Brain::setIdea(std::string idea, int N)
+{
+	if (N >= 0 && N < 100)
+		ideas[N] = idea;
 }

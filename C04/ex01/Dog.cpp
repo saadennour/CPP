@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:49 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:39:50 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 00:23:57 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,17 @@ Dog::~Dog()
     std::cout << "Destructor of Dog is called\n";
 }
 
+void	Dog::setThought(std::string Thought, int N)
+{
+	thoughts->setIdea(Thought, N);
+}
+
+std::string	Dog::getThought(int N)
+{
+	return (thoughts->getIdea(N));
+}
+
 void    Dog::makeSound() const
 {
     std::cout << "hoof....hoof....hoof\n";
 }
-
-// std::string Dog::getType()
-// {
-//     return (this->type);
-// }

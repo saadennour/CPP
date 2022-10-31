@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:38:42 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/06 22:38:43 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 14:48:29 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
     virtual void    makeSound() const;
     std::string getType() const;
-    ~Animal();
+    virtual ~Animal();
 };
 
 #endif

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:39:46 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 00:18:55 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/10/30 16:14:50 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/30 16:53:03 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal
+class	WrongAnimal
 {
-private:
-    Brain   *thoughts;
+protected:
+	std::string type;	
 public:
-    Cat();
-    Cat(const Cat& copy);
+	WrongAnimal();
+	WrongAnimal(std::string _type);
+	WrongAnimal(const WrongAnimal &copy);
 
-    Cat& operator=(const Cat& copy);
-
-	void	setThought(std::string Thought, int N);
-	std::string	getThought(int N);
-    void    makeSound() const;
-    ~Cat();
+	WrongAnimal&	operator=(const WrongAnimal &copy);
+	void	makeSound() const;
+    std::string getType() const;
+	~WrongAnimal();
 };
 
 #endif
