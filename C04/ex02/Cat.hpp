@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/31 18:41:03 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/31 18:45:39 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CAT_HPP
 #define CAT_HPP
 
@@ -11,13 +23,14 @@ private:
     Brain   *thoughts;
 public:
     Cat();
+	Cat(std::string name);
     Cat(const Cat& copy);
 
     Cat& operator=(const Cat& copy);
 
+	void	setThought(std::string Thought, int N);
+	std::string	getThought(int N);
     void    makeSound() const;
-    // std::string getType();
     ~Cat();
 };
-
 #endif

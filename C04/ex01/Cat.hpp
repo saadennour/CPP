@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:46 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 00:18:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 17:54:05 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
     Brain   *thoughts;
 public:
     Cat();
+	Cat(std::string name);
     Cat(const Cat& copy);
 
     Cat& operator=(const Cat& copy);

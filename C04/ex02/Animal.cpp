@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/31 18:39:22 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/10/31 18:39:49 by sfarhan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 Animal::Animal()
@@ -29,7 +41,17 @@ Animal::~Animal()
     std::cout << "Destructor of Animal is called\n";
 }
 
+void    Animal::makeSound() const
+{
+    std::cout << "Some animal shouts\n";
+}
+
 std::string Animal::getType() const
 {
     return (this->type);
+}
+
+void	Animal::setType(std::string _type)
+{
+	type = _type;
 }

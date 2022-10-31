@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:42 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 00:18:21 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:43:13 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ Cat::Cat()
     std::cout << "Default constructor of Cat is called\n";
 }
 
+Cat::Cat(std::string name)
+{
+    type = name;
+	thoughts = new Brain();
+    std::cout << "Parameterized constructor of Cat is called\n";
+}
+
+
 Cat::Cat(const Cat& copy)
 {
     std::cout << "Copy constructor of Cat is called\n";
@@ -28,6 +36,9 @@ Cat::Cat(const Cat& copy)
 Cat&    Cat::operator=(const Cat& copy)
 {
     this->type = copy.type;
+	delete this->thoughts;
+	this->thoughts = new Brain();
+	*this->thoughts = *copy.thoughts;
     return (*this);
 }
 
@@ -44,7 +55,9 @@ void	Cat::setThought(std::string Thought, int N)
 
 std::string	Cat::getThought(int N)
 {
-	return (thoughts->getIdea(N));
+	if (!thoughts->getIdea(N).empty())
+		return (thoughts->getIdea(N));
+	return ("fluff");
 }
 
 void    Cat::makeSound() const

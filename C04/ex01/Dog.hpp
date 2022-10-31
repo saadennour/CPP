@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:56 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 00:23:55 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 17:54:35 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
     Brain   *thoughts;
 public:
     Dog();
+	Dog(std::string name);
     Dog(const Dog& copy);
 
     Dog& operator=(const Dog& copy);

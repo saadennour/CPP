@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:30 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/30 23:48:28 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:02:07 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     Animal(std::string name);
     Animal(const Animal& copy);
 
-    // Animal& operator=(const Animal& copy);
+    Animal& operator=(const Animal& copy);
 
     virtual void    makeSound() const;
     std::string getType() const;
