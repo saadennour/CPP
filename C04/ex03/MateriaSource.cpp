@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "MateriaSource.hpp"
+
+MateriaSource::MateriaSource()
+{
+    std::cout << "Default constructor of MateriaSource is called\n";
+}
+
+MateriaSource::~MateriaSource()
+{
+    std::cout << "Destructor of MateriaSource is called\n";
+}

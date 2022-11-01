@@ -27,3 +27,9 @@ Ice::~Ice()
 {
 	std::cout << "Destructor of Ice is called\n";
 }
+
+AMateria*   Ice::clone() const
+{
+    AMateria *clone = new Ice();
+    return (clone);
+}

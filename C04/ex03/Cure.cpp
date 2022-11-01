@@ -29,7 +29,14 @@ Cure::~Cure()
 	std::cout << "Destructor of Cure is called\n";
 }
 
-AMateria*	clone() const
+Ice	&Ice::operator=(const Ice &copy)
 {
-	
+	this->type = copy.type;
+	return (*this);
+}
+
+AMateria*   Cure::clone() const
+{
+    AMateria *clone = new Cure();
+    return (clone);
 }
