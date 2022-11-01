@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:34:10 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 21:16:53 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/01 01:51:49 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,9 @@ Cure::Cure(std::string name)
 Cure::~Cure()
 {
 	std::cout << "Destructor of Cure is called\n";
+}
+
+AMateria*	clone() const
+{
+	
 }

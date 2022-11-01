@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:34:07 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 21:19:16 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/01 00:07:22 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,15 @@ AMateria::AMateria(std::string name)
 
 AMateria::~AMateria()
 {
-	
+	std::cout << "Destructor of AMateria is called\n";
+}
+
+std::string const &AMateria::getType() const
+{
+	return (type);
+}
+
+void	AMateria::use(ICharacter&  target)
+{
+	// std::cout << target.name << "\n";
 }
