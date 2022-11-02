@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 00:04:31 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/01 00:05:59 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/01 21:02:38 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define	IMATERIASOURCE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

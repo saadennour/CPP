@@ -1,11 +1,13 @@
 NAME = Interface
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
-SRCS =	AMateria.cpp	\
+SRCS =	main.cpp 		\
+		AMateria.cpp	\
 		Ice.cpp			\
 		Cure.cpp		\
-		ICharacter.cpp	\
+		Character.cpp	\
+		MateriaSource.cpp	\
 
 all : $(NAME)
 

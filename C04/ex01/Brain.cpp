@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:33 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 18:12:37 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/02 00:34:30 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ Brain::Brain(const Brain& copy)
 Brain&  Brain::operator=(const Brain& copy)
 {
 	for (int i = 0; i < 100; i++)
-    	this->ideas[i] = copy.ideas[i];
+	{
+		if (!copy.ideas[i].empty())
+    		this->ideas[i] = copy.ideas[i];
+	}
 	std::cout << "Assignement operator of Brain called\n";
     return (*this);
 }

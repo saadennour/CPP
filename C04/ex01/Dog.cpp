@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:49 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 18:28:51 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/02 00:37:26 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ Dog::Dog(std::string name)
 Dog::Dog(const Dog& copy)
 {
     std::cout << "Copy constructor of Dog is called\n";
-    *this = copy;
+    thoughts = new Brain();
+	*this = copy;
 }
 
 Dog&    Dog::operator=(const Dog& copy)

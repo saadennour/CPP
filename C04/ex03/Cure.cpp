@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:34:10 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/01 01:51:49 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/02 00:12:53 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ Cure::Cure(std::string name)
 	std::cout << "Parameterized constructor of Cure is called\n";
 }
 
+Cure::Cure(const Cure &copy)
+{
+	*this = copy;
+	std::cout << "Copy constructor of Cure is called\n";
+}
+
 Cure::~Cure()
 {
 	std::cout << "Destructor of Cure is called\n";
 }
 
-Ice	&Ice::operator=(const Ice &copy)
+Cure&	Cure::operator=(const Cure &copy)
 {
 	this->type = copy.type;
 	return (*this);
@@ -39,4 +45,9 @@ AMateria*   Cure::clone() const
 {
     AMateria *clone = new Cure();
     return (clone);
+}
+
+void	Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }

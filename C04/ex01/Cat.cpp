@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:39:42 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 18:43:13 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/02 00:37:42 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Cat::Cat(std::string name)
 Cat::Cat(const Cat& copy)
 {
     std::cout << "Copy constructor of Cat is called\n";
+	thoughts = new Brain();
     *this = copy;
 }
 
