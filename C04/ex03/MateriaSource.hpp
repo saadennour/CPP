@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 18:37:14 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/02 02:03:02 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 01:46:11 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
     MateriaSource &operator=(const MateriaSource &copy);
 
-    void    learnMateria(AMateria* source);
+    void    	learnMateria(AMateria* source);
     AMateria    *createMateria(std::string const &type);
 
     ~MateriaSource();

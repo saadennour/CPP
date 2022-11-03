@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 23:03:39 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/02 02:19:04 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 02:53:19 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,22 @@ Character::Character(std::string _name)
 
 Character::Character(const Character &copy)
 {
+	std::cout << "Copy constructor of Character is called\n";
 	for (int i = 0; i < 4; i++)
 		this->Materias[i] = nullptr;
 	*this = copy;
-	std::cout << "Copy constructor of Character is called\n";
 }
 
 Character&	Character::operator=(const Character &copy)
 {
 	this->name = copy.name;
 	for (int i = 0; i < 4; i++)
-		Materias[i] = copy.Materias[i]->clone();
+	{
+		if (Materias[i] != nullptr)
+			delete Materias[i];
+		if (copy.Materias[i] != nullptr)
+			Materias[i] = copy.Materias[i]->clone();
+	}
 	return (*this);
 }
 
@@ -50,7 +55,7 @@ Character::~Character()
 		if (this->Materias[i])
 			delete Materias[i];
 	}
-	std::cout << "Destructor of Character is called\n";
+	std::cout << "Destructor of Character " << this->getName() << " is called\n";
 }
 
 std::string	const& Character::getName() const
@@ -64,7 +69,6 @@ void	Character::equip(AMateria *m)
 	{
 		if (this->Materias[i] == nullptr && m != nullptr)
 		{
-			delete this->Materias[i];
 			this->Materias[i] = m->clone();
 			break ;
 		}

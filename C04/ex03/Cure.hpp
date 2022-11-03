@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:34:23 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/01 22:11:11 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 01:45:23 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ public:
 	void use(ICharacter& target);
 	~Cure();
 };
-
-
 
 
 #endif

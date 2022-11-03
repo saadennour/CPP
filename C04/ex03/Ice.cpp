@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 20:34:14 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/02 00:18:07 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 02:51:02 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice()
 {
 	type = "ice";
-	std::cout << "Default of constructor of Ice\n";
+	std::cout << "Default of constructor of Ice is called\n";
 }
 
 Ice::Ice(std::string name)

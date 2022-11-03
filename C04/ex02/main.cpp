@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 17:51:24 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/31 20:27:52 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 01:42:47 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 int main()
 {
-	Animal giraff;
+	const Animal *giraff = new Cat();
  
 	giraff->makeSound();
+	delete giraff;
     return 0;
 }

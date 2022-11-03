@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:12:53 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/02 02:11:33 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/02 23:52:38 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ MateriaSource::MateriaSource(const MateriaSource& copy)
 MateriaSource& MateriaSource::operator=(const MateriaSource& copy)
 {
 	for (int i = 0; i < 4; i++)
-		this->Materias[i] = copy.Materias[i]->clone();
+	{
+		if (Materias[i] != nullptr)
+			delete Materias[i];
+		if (copy.Materias[i] != nullptr)
+			this->Materias[i] = copy.Materias[i]->clone();
+	}
 	return (*this);
 }
 
@@ -38,7 +43,7 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->Materias[i])
+		if (this->Materias[i] != nullptr)
 			delete Materias[i];
 	}
     std::cout << "Destructor of MateriaSource is called\n";
@@ -50,7 +55,6 @@ void	MateriaSource::learnMateria(AMateria *source)
 	{
 		if (this->Materias[i] == nullptr && source != nullptr)
 		{
-			delete this->Materias[i];
 			this->Materias[i] = source->clone();
 			break ;
 		}
