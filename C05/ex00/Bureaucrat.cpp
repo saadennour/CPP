@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:14:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/07 21:43:39 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 03:36:49 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,10 @@ void	Bureaucrat::GoHigher()
 void	Bureaucrat::GoLower()
 {
 	this->grade++;
+}
+
+std::ostream&	operator<<(std::ostream &out, const Bureaucrat &copy)
+{
+	out << copy.getName() << " bureaucrat grade " << copy.getGrade() << "\n";
+	return (out);
 }
