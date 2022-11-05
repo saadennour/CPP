@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:14:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/03 03:36:49 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/05 05:01:29 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,23 @@ Bureaucrat::Bureaucrat()
 	std::cout << "Default constructor has been called\n";
 }
 
+void	exthrow(int value)
+{
+	if (value < 1 || value > 150)
+		throw value;
+}
+
 Bureaucrat::Bureaucrat(const std::string word, int value):name(word)
 {
 	try
 	{
-		if (value < 1 || value > 150)
-			throw value;
+		exthrow(value);
+		grade = value;
 	}
 	catch(int value)
 	{
 		std::cerr << "exception caught" << '\n';
 	}
-	grade = value;
 	std::cout << "Parameterized constructor has been called\n";
 }
 

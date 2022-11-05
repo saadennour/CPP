@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:40:01 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/03 01:25:07 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/03 20:58:18 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int main()
 	// {
 	// 	std::cout << "www" << std::endl;
 	// 	Dog b = a;
+	// 	b.setThought("food", 0);
+	// 	std::cout << a.getThought(0) << "\n";
+	// 	std::cout << b.getThought(0) << "\n";
 	// }
     Animal **meta = new Animal*[10];
 
