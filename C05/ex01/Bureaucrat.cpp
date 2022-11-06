@@ -21,17 +21,10 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::Bureaucrat(const std::string word, int value):name(word)
 {
 	std::cout << "Parameterized constructor has been called\n";
-	try
-	{
-		if (value < 1)
-			throw Bureaucrat::GradeTooHighException("this grade is too high");
-		else if (value > 150)
-			throw Bureaucrat::GradeTooLowException("this grade is too low");
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << "exception caught " << e.what() << '\n';
-	}
+	if (value < 1)
+		throw Bureaucrat::GradeTooHighException("this grade is too high");
+	else if (value > 150)
+		throw Bureaucrat::GradeTooLowException("this grade is too low");
 	grade = value;
 }
 

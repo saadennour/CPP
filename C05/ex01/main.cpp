@@ -14,15 +14,14 @@
 
 int main()
 {
-	Bureaucrat	noble("george", 150);
-	Bureaucrat	noble2("fred", 1);
 
 	std::cout << noble;
 	std::cout << noble2;
 
 	try
 	{
-		noble.GoLower();
+		Bureaucrat	noble("george", 150);
+		Bureaucrat	noble2("fred", 1);
 	}
 	catch(std::exception &e)
 	{
@@ -30,6 +29,7 @@ int main()
 	}
 	try
 	{
+		noble.GoLower();
 		noble2.GoHigher();
 	}
 	catch(std::exception &e)

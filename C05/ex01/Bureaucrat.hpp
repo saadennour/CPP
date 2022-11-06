@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 
 class Bureaucrat
@@ -30,9 +31,11 @@ public :
 	Bureaucrat& operator=(const Bureaucrat& copy);
 
 	std::string getName() const;
-	int	getGrade() const;
+	int		getGrade() const;
 	void	GoHigher();
 	void	GoLower();
+
+	void	signForm(Form &contract);
 
 	class GradeTooHighException : public std::exception
 	{
