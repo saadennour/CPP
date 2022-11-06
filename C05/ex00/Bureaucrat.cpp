@@ -6,11 +6,31 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:14:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/05 05:01:29 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 06:32:46 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+GradeTooHighException::GradeTooHighException(std::string error)
+{
+	msg = error;
+}
+
+const char* GradeTooHighException::what() const _NOEXCEPT
+{
+	return msg.c_str();
+}
+
+GradeTooLowException::GradeTooLowException(std::string error)
+{
+	msg = error;
+}
+
+const char* GradeTooLowException::what() const _NOEXCEPT
+{
+	return msg.c_str();
+}
 
 Bureaucrat::Bureaucrat()
 {

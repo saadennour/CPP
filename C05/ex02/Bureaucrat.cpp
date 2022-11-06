@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:14:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 07:17:01 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 08:37:34 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,13 @@ void	Bureaucrat::signForm(const Form &contract)
 {
 	std::cout << this->getName();
 	(contract.getSign()) ? std::cout << " signed " << contract.getName() << "\n" : std::cout << " couldn't sign " << contract.getName() << " because bureaucrat grade is lower than required grade to sign this form\n";
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	std::cout << this->getName();
+	(form.getSign() && grade <= form.getExec()) ? std::cout << " executed " : std::cout << " couldn't execute ";
+	std::cout << form.getName() << "\n";
 }
 
 std::ostream&	operator<<(std::ostream &out, const Bureaucrat &copy)

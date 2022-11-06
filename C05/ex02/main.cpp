@@ -6,27 +6,28 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:09 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 07:17:14 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 08:47:37 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
 	try
 	{
-		Form	birth("birth", 1, 200, 40);
-		Form	work("work", 1, 100, 149);
+		ShrubberyCreationForm	birth("birth");
+		ShrubberyCreationForm	work("work");
 	}
 	catch(std::exception &e)
 	{
 		std::cerr << "exception caught " << e.what() << '\n';
 	}
 	Bureaucrat	client("thomas", 21);
-	Form	birth("birth", 1, 20, 40);
-	Form	work("work", 1, 100, 149);
+	ShrubberyCreationForm	birth("birth");
+	ShrubberyCreationForm	work("work");
 	try
 	{
 		birth.beSigned(client);
@@ -35,6 +36,7 @@ int main()
 	{
 		std::cerr << "Exception caught " << e.what() << '\n';
 	}
+	birth.execute(client);
 	std::cout << birth << '\n';
 	std::cout << work << '\n';
 	client.signForm(birth);

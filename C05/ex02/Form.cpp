@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 03:20:54 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 07:11:44 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 08:08:50 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ Form&	Form::operator=(const Form& copy)
 Form::~Form()
 {
 	std::cout << "Destructor of Form is called\n";
+}
+
+void	Form::setSign(bool value)
+{
+	signature = value;
 }
 
 std::string	Form::getName() const

@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:38:29 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/07 19:51:24 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 06:49:27 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <exception>
 #include "Form.hpp"
 
-
+class Form;
 class Bureaucrat
 {
 private :
@@ -35,25 +35,25 @@ public :
 	void	GoHigher();
 	void	GoLower();
 
-	void	signForm(Form &contract);
+	void	signForm(const Form &contract);
 
 	class GradeTooHighException : public std::exception
 	{
 	private:
 		std::string msg;
 	public:
-		GradeTooHighException(std::string error):msg(error){};
-		const char* what() const _NOEXCEPT {return msg.c_str();};
-		~GradeTooHighException() _NOEXCEPT {};
+		GradeTooHighException(std::string error);
+		const char* what() const _NOEXCEPT;
+		~GradeTooHighException() _NOEXCEPT;
 	};
 	class GradeTooLowException : public std::exception
 	{
 	private:
 		std::string msg;
 	public:
-		GradeTooLowException(std::string error):msg(error){};
-		const char* what() const _NOEXCEPT {return msg.c_str();};
-		~GradeTooLowException() _NOEXCEPT {};
+		GradeTooLowException(std::string error);
+		const char* what() const _NOEXCEPT;
+		~GradeTooLowException() _NOEXCEPT;
 	};
 	~Bureaucrat();
 };

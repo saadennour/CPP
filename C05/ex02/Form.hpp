@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 03:20:56 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 06:48:51 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/06 08:08:19 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,15 @@ public:
 		~GradeTooLowException() _NOEXCEPT;
 	};
 
+	void		setSign(bool value);
+
     std::string getName()  const;
     bool        getSign() const;
     int         getGrade() const;
     int         getExec() const;
 
-    void        beSigned(Bureaucrat &client);
+    virtual void	beSigned(Bureaucrat &client) = 0;
+	virtual void	execute(Bureaucrat const &client) const = 0;
 
 
     ~Form();
