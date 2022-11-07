@@ -109,7 +109,7 @@ void	Bureaucrat::signForm(const Form &contract)
 void	Bureaucrat::executeForm(Form const &form)
 {
 	std::cout << this->getName();
-	(form.getSign() && grade <= form.getExec()) ? std::cout << " executed " : std::cout << " couldn't execute ";
+	(form.getSign() && grade <= form.getExec()) ? std::cout << " executed " : throw GradeTooLowException(" couldn't execute because his grade is too low");
 	std::cout << form.getName() << "\n";
 }
 

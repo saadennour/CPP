@@ -23,12 +23,22 @@ class	Intern
 {
 public :
 	Intern();
-	// Inter(const Intern &copy);
+	Intern(const Intern &copy);
 	
-	// Intern&	operator=(const Intern& copy);
+	Intern&	operator=(const Intern& copy);
 
 	Form*	makeForm(std::string _name, std::string _target);
 
+	class FormError : public std::exception
+	{
+	private:
+		std::string	msg;
+	public:
+		FormError(std::string error);
+		const char* what() const _NOEXCEPT;
+		~FormError() _NOEXCEPT;
+	};
+	
 	~Intern();
 };
 

@@ -12,21 +12,37 @@
 
 #include "Intern.hpp"
 
+Intern::FormError::FormError(std::string error)
+{
+	msg = error;
+}
+
+const char*	Intern::FormError::what() const _NOEXCEPT
+{
+	return (msg.c_str());
+}
+
+Intern::FormError::~FormError() _NOEXCEPT
+{
+
+}
+
 Intern::Intern()
 {
 	std::cout << "Default constructor of Intern is called\n";
 }
 
-// Intern::Intern(const Intern &copy)
-// {
-// 	std::cout << "Copy constructor of Intern is called\n";
-// 	*this = copy;
-// }
+Intern::Intern(const Intern &copy)
+{
+	std::cout << "Copy constructor of Intern is called\n";
+	*this = copy;
+}
 
-// Inter&	Intern::operator=(const Intern &copy)
-// {
-// 	return (*this);
-// }
+Intern&	Intern::operator=(const Intern &copy)
+{
+	(void)copy;
+	return (*this);
+}
 
 Intern::~Intern()
 {
@@ -52,5 +68,5 @@ Form*	Intern::makeForm(std::string _name, std::string _target)
 			}
 		}
 	}
-	throw Form::
+	throw FormError("There is no such form");
 }
