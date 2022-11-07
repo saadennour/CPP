@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 07:28:47 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/07 00:52:02 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/07 01:37:46 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/07 02:23:23 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ROBOTOMYREQUESTFORM_HPP
-#define	ROBOTOMYREQUESTFORM_HPP
+#ifndef	INTERN_HPP
+#define	INTERN_HPP
 
 #include <iostream>
 #include "Form.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-class RobotomyRequestForm : public Form
+class	Intern
 {
-private:
-	std::string target;
-public:
-	RobotomyRequestForm();
-	RobotomyRequestForm(std::string target);
-	RobotomyRequestForm(const RobotomyRequestForm& copy);
+public :
+	Intern();
+	// Inter(const Intern &copy);
+	
+	// Intern&	operator=(const Intern& copy);
 
-	RobotomyRequestForm&	operator=(const RobotomyRequestForm& copy);
+	Form*	makeForm(std::string _name, std::string _target);
 
-	void	beSigned(Bureaucrat &client);
-	void	execute(Bureaucrat const &client) const;
-	~RobotomyRequestForm();
+	~Intern();
 };
 
 #endif
