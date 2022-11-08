@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 07:28:41 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/07 03:25:30 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 23:08:56 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void	ShrubberyCreationForm::beSigned(Bureaucrat &client)
 {
-	(client.getGrade() <= 145) ? this->setSign(1) : throw GradeTooLowException("Grade Too Low to sign the Form !");;
+	(client.getGrade() <= 145) ? setSign(1) : throw GradeTooLowException();
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &client) const
@@ -61,7 +61,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &client) const
 		file << "  /        \\\n";
 		file << " /          \\\n";
 		file << "/            \\\n";
-		file << "------  ------\n";
+		file << "------ - ------\n";
 		file << "      | |\n";
 		file << "      | |\n";
 		file << "      | |\n";
@@ -69,5 +69,5 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &client) const
 		file.close();
 	}
 	else
-		throw GradeTooLowException("Grade Too Low to execute ShrubberyCreationForm\n");
+		throw GradeTooLowException();
 }

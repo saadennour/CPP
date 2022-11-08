@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:09 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 07:17:14 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 22:42:48 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main()
 	}
 	std::cout << birth << '\n';
 	std::cout << work << '\n';
+
 	client.signForm(birth);
 	// try
 	// {

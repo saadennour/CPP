@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:38:29 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 08:34:16 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 22:44:09 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,15 @@ public :
 
 	class GradeTooHighException : public std::exception
 	{
-	private:
-		std::string msg;
 	public:
-		GradeTooHighException(std::string error);
-		const char* what() const _NOEXCEPT;
-		~GradeTooHighException() _NOEXCEPT;
+		const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-	private:
-		std::string msg;
 	public:
-		GradeTooLowException(std::string error);
-		const char* what() const _NOEXCEPT;
-		~GradeTooLowException() _NOEXCEPT;
+		const char* what() const throw();
 	};
+
 	~Bureaucrat();
 };
 

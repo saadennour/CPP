@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:37:46 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/07 02:23:23 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 19:55:21 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,8 @@ public :
 
 	class FormError : public std::exception
 	{
-	private:
-		std::string	msg;
 	public:
-		FormError(std::string error);
-		const char* what() const _NOEXCEPT;
-		~FormError() _NOEXCEPT;
+		const char* what() const throw();
 	};
 	
 	~Intern();

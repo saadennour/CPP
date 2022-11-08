@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:48:09 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/10/07 21:47:04 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/08 01:06:10 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ int main()
 	std::cout << noble;
 	std::cout << noble2;
 
+	try
+	{
+		Bureaucrat	worker("sam", 151);
+		Bureaucrat	worker2("michael", 0);
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << "exception caught " << e.what() << '\n';
+	}
+	
 	try
 	{
 		noble.GoLower();
@@ -36,5 +46,10 @@ int main()
 	{
 		std::cerr << "exception caught " << e.what() << '\n';
 	}
+	noble.GoHigher();
+	noble2.GoLower();
+
+	std::cout << noble;
+	std::cout << noble2;	
 	return (0);
 }

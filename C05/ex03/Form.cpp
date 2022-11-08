@@ -6,40 +6,20 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 03:20:54 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 08:08:50 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 23:06:28 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::GradeTooHighException::GradeTooHighException(std::string error)
+const char* Form::GradeTooHighException::what() const throw()
 {
-	msg = error;
+	return ("Grade is Higher than the required");
 }
 
-const char* Form::GradeTooHighException::what() const _NOEXCEPT
+const char* Form::GradeTooLowException::what() const throw()
 {
-	return msg.c_str();
-}
-
-Form::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
-{
-	
-}
-
-Form::GradeTooLowException::GradeTooLowException(std::string error)
-{
-	msg = error;
-}
-
-const char* Form::GradeTooLowException::what() const _NOEXCEPT
-{
-	return msg.c_str();
-}
-
-Form::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
-{
-	
+	return ("Grade is Lower than the required");
 }
 
 Form::Form():name("none"),grade(1),exec(1)
@@ -50,13 +30,12 @@ Form::Form():name("none"),grade(1),exec(1)
 
 Form::Form(std::string _name, bool sign, int _grade, int _exec):name(_name),grade(_grade),exec(_exec)
 {
-	(void)sign;
-	signature = 0;
+	signature = sign;
 	std::cout << "Parameterized constructor of Form is called\n";
 	if (_grade < 1 || _exec < 1)
-		throw Form::GradeTooHighException("grade Too High");
+		throw Form::GradeTooHighException();
 	else if (_grade > 150 || _exec > 150)
-		throw Form::GradeTooLowException("grade Too Low");
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(const Form& copy):name(copy.name),grade(copy.grade),exec(copy.exec)
@@ -103,7 +82,7 @@ int		Form::getExec() const
 
 void	Form::beSigned(Bureaucrat &client)
 {
-	(client.getGrade() <= this->getGrade()) ? signature = 1 : throw GradeTooLowException("Grade Too Low to sign the Form !");;
+	(client.getGrade() <= this->getGrade()) ? signature = 1 : throw GradeTooLowException();
 }
 
 std::ostream&	operator<<(std::ostream	&out, const Form &copy)

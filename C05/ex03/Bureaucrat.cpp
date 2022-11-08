@@ -6,74 +6,53 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:14:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/06 08:37:34 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 23:05:28 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(std::string error)
+const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	msg = error;
+	return ("Bureaucrat Grade is Too High");
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return msg.c_str();
-}
-
-Bureaucrat::GradeTooHighException::~GradeTooHighException() _NOEXCEPT
-{
-	
-}
-
-Bureaucrat::GradeTooLowException::GradeTooLowException(std::string error)
-{
-	msg = error;
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
-{
-	return msg.c_str();
-}
-
-Bureaucrat::GradeTooLowException::~GradeTooLowException() _NOEXCEPT
-{
-	
+	return ("Bureaucrat Grade is Too Low");
 }
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Default constructor has been called\n";
+	std::cout << "Default constructor of Bureaucrat has been called\n";
 	grade = 1;
 }
 
 Bureaucrat::Bureaucrat(const std::string word, int value):name(word)
 {
-	std::cout << "Parameterized constructor has been called\n";
+	std::cout << "Parameterized constructor of Bureaucrat has been called\n";
 	if (value < 1)
-		throw Bureaucrat::GradeTooHighException("this grade is too high");
+		throw Bureaucrat::GradeTooHighException();
 	else if (value > 150)
-		throw Bureaucrat::GradeTooLowException("this grade is too low");
+		throw Bureaucrat::GradeTooLowException();
 	grade = value;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy):name(copy.name)
 {
-	std::cout << "Copy constructor has been called\n";
+	std::cout << "Copy constructor of Bureaucrat has been called\n";
 	*this = copy;
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& copy)
 {
-	(std::string)this->name = copy.name;
 	this->grade = copy.grade;
 	return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor has been called\n";
+	std::cout << "Destructor of Bureaucrat has been called\n";
 }
 
 std::string	Bureaucrat::getName() const
@@ -89,14 +68,14 @@ int	Bureaucrat::getGrade() const
 void	Bureaucrat::GoHigher()
 {
 	if (this->grade - 1 < 1)
-		throw GradeTooHighException("U went too high !!");
+		throw GradeTooHighException();
 	this->grade--;
 }
 
 void	Bureaucrat::GoLower()
 {
 	if (this->grade + 1 > 150)
-		throw GradeTooLowException("U went too low !!");
+		throw GradeTooLowException();
 	this->grade++;
 }
 
@@ -109,7 +88,7 @@ void	Bureaucrat::signForm(const Form &contract)
 void	Bureaucrat::executeForm(Form const &form)
 {
 	std::cout << this->getName();
-	(form.getSign() && grade <= form.getExec()) ? std::cout << " executed " : throw GradeTooLowException(" couldn't execute because his grade is too low");
+	(form.getSign() && grade <= form.getExec()) ? std::cout << " executed " : throw GradeTooLowException();
 	std::cout << form.getName() << "\n";
 }
 

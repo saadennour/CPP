@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 07:28:38 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/07 01:28:46 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 22:49:19 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void	RobotomyRequestForm::beSigned(Bureaucrat &client)
 {
-	(client.getGrade() <= 72) ? this->setSign(1) : throw GradeTooLowException("Grade Too Low to sign the Form !");
+	(client.getGrade() <= 72) ? this->setSign(1) : throw GradeTooLowException();
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &client) const
@@ -54,5 +54,5 @@ void	RobotomyRequestForm::execute(Bureaucrat const &client) const
 	else if (this->getSign() && client.getGrade() <= 45 && random % 2 != 0)
 		std::cout << "Robotomy failed !!\n";
 	else
-		throw GradeTooLowException("Grade Too Low to execute RobotomyRequestForm\n");
+		throw GradeTooLowException();
 }

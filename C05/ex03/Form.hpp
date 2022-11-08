@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 03:20:56 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/07 02:32:18 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/07 20:07:39 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,13 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-	private:
-		std::string msg;
 	public:
-		GradeTooHighException(std::string error);
-		const char* what() const _NOEXCEPT;
-		~GradeTooHighException() _NOEXCEPT;
+		const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-	private:
-		std::string msg;
 	public:
-		GradeTooLowException(std::string error);
-		const char* what() const _NOEXCEPT;
-		~GradeTooLowException() _NOEXCEPT;
+		const char* what() const throw();
 	};
 
 	void		setSign(bool value);
