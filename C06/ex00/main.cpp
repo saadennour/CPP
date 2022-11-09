@@ -47,9 +47,13 @@ void	PrintChar(char *av)
 		std::cout << "Chaar : '" << av[0] << "'\n";
 }
 
-void	PrintFloat(double code)
+void	PrintFloat(char *av)
 {
-	if (static_cast<float>(code) < FLOAT_MIN)
+	double code = atof(av);
+
+    if (!isdigit(av[0]) && code == 0)
+        std::cout << "Float : " << static_cast<float>(av[0]) << ".0f\n";
+	else if (static_cast<float>(code) < FLOAT_MIN)
 		std::cout << "Float : -inff\n";
 	else
 	{
@@ -58,15 +62,29 @@ void	PrintFloat(double code)
 	}
 }
 
-void	PrintDouble(double dcode)
+void	PrintDouble(char *av)
 {
-	if (dcode < DOUBLE_MIN)
+	double dcode = atof(av);
+
+    if (!isdigit(av[0]) && dcode == 0)
+        std::cout << "Float : " << static_cast<double>(av[0]) << ".0\n";
+	else if (dcode < DOUBLE_MIN)
 		std::cout << "Double : -inf\n";
 	else
 	{
 		std::cout << std::setprecision(1) << std::fixed;
     	(dcode > DOUBLE_MAX) ? std::cout << "Double : +inf\n" : std::cout << "Double : " << dcode <<"\n";
 	}
+}
+
+void    PrintInt(char *av)
+{
+    long code = atol(av);
+
+    if (!isdigit(av[0]) && code == 0)
+        std::cout << "Int : " << static_cast<int>(av[0]) << '\n';
+    else
+        (code < INT32_MIN || code > INT32_MAX) ? std::cout << "Int : impossible\n" : std::cout << "Int : " << code << "\n";
 }
 
 int main(int ac, char **av)
@@ -77,13 +95,9 @@ int main(int ac, char **av)
         return (1);
     }
     pseudoliteral(av[1]);
-
-    long code = atol(av[1]);
-	double dcode = atof(av[1]);
-
 	PrintChar(av[1]);
-    (code < INT32_MIN || code > INT32_MAX) ? std::cout << "Int : impossible\n" : std::cout << "Int : " << code << "\n";
-	PrintFloat(dcode);
-	PrintDouble(dcode);
+    PrintInt(av[1]);
+	PrintFloat(av[1]);
+	PrintDouble(av[1]);
 	return (0);
 }
