@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:40:52 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/10 01:44:50 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/10 09:26:37 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/10 12:09:47 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef	ITER_HPP
+#define	ITER_HPP
 
 #include <iostream>
 
-typedef struct Data
+template <typename T, typename U>
+void	iter(T* x, U len, void (&func)(T const&))
 {
-    int data;
-    Data(int _data);
-}   Data;
+	for (U i = 0; i < len; i++)
+		func(x[i]);	
+}
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
-
-std::ostream&   operator<<(std::ostream& out, const Data& ptr);
+template <typename T>
+void	print(T const &x)
+{
+	std::cout << x << std::endl;
+}
 
 #endif

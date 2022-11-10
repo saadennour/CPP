@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:40:52 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/10 01:44:50 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/10 04:02:28 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/10 11:34:21 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef	WHATEVER_HPP
+#define WHATEVER_HPP
 
 #include <iostream>
 
-typedef struct Data
+template <typename T>
+void	swap(T &x, T &y)
 {
-    int data;
-    Data(int _data);
-}   Data;
+	T swap;
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+	swap = x;
+	x = y;
+	y = swap;	
+}
 
-std::ostream&   operator<<(std::ostream& out, const Data& ptr);
+template <typename T>
+T	max(T x, T y)
+{
+	return (x > y) ? x : y;
+}
+
+template <typename T>
+T	min(T x, T y)
+{
+	return (x < y) ? x : y;
+}
+
 
 #endif

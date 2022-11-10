@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Awesome.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:40:52 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/10 01:44:50 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/10 12:26:20 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/10 12:26:56 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef	AWESOME_HPP
+#define	AWESOME_HPP
 
-#include <iostream>
-
-typedef struct Data
+class Awesome
 {
-    int data;
-    Data(int _data);
-}   Data;
-
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
-
-std::ostream&   operator<<(std::ostream& out, const Data& ptr);
+private:
+	/* data */
+public:
+	Awesome(/* args */);
+	~Awesome();
+};
 
 #endif

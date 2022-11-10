@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 01:40:52 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/10 01:44:50 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/10 09:26:32 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/10 12:10:02 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#include "iter.hpp"
 
-#include <iostream>
-
-typedef struct Data
+int main()
 {
-    int data;
-    Data(int _data);
-}   Data;
+	double	tab[] = {0.5, 1.23, 7.432, 0.334, 401.1};
+	int		tab2[] = {23, 545, 0, 10, 243, 543, 5436, 54};
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
-
-std::ostream&   operator<<(std::ostream& out, const Data& ptr);
-
-#endif
+	iter(tab, 5, print);
+	iter(tab2, 18, print);
+	return (0);
+}
