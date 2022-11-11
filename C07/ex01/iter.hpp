@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 09:26:37 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/11 11:07:34 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/11 14:09:57 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ template <typename T>
 void	iter(T* x, size_t len, void (&func)(T const&))
 {
 	for (size_t i = 0; i < len; i++)
-		func(x[i]);	
+		func(x[i]);
 }
 
 template <typename T>

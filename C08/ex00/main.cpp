@@ -5,27 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 04:02:03 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/11 14:12:24 by sfarhan          ###   ########.fr       */
+/*   Created: 2022/11/11 16:48:07 by sfarhan           #+#    #+#             */
+/*   Updated: 2022/11/11 16:48:56 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "easyfind.hpp"
 
 int main()
 {
-	int a = 2;
-	int b = 3;
-
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	return (0);
 }
