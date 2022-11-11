@@ -15,10 +15,10 @@
 
 #include <iostream>
 
-template <typename T, typename U>
-void	iter(T* x, U len, void (&func)(T const&))
+template <typename T>
+void	iter(T* x, size_t len, void (&func)(T const&))
 {
-	for (U i = 0; i < len; i++)
+	for (size_t i = 0; i < len; i++)
 		func(x[i]);	
 }
 
