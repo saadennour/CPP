@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 04:02:28 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/10 11:34:21 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/11 10:16:08 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap(T &x, T &y)
 
 	swap = x;
 	x = y;
-	y = swap;	
+	y = swap;
 }
 
 template <typename T>
