@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:25:56 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/12 17:29:30 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/14 01:29:59 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 const char*	Span::OutofBound::what() const throw()
 {
-	return ("You went out of range\n");
+	return ("You went out of range");
 }
 
 Span::Span()
 {
+	i = 0;
 	std::cout << "Default constructor is called\n";
 }
 
 Span::Span(unsigned int n)
 {
-	container.resize(n);
+	i = 0;
+	container.insert(container.begin(), n, 0);
 	std::cout << "Parameterized constructor is called\n";
 }
 
@@ -35,6 +37,7 @@ Span::Span(const Span& copy)
 
 Span&	Span::operator=(const Span& copy)
 {
+	this->i = copy.i;
 	std::cout << "Assignment operator is called\n";
 	for (size_t i = 0; i < copy.container.size(); i++)
 		this->container[i] = copy.container[i];
@@ -43,31 +46,18 @@ Span&	Span::operator=(const Span& copy)
 
 void	Span::addNumber(int num)
 {
-	for (size_t	i = 0; i < container.size(); i++)
-	{
-		if (container[i] == 0)
-		{
-			container[i] = num;
-			return ;
-		}
-	}
-	throw OutofBound();	
-}
-
-void	Span::addaBunch(size_t num)
-{
-	std::srand(time(NULL));
-	for (size_t i = 0; i < num; i++)
-	{
-		int ran = std::rand();
-		addNumber(ran);
-	}
+	if (i == this->container.size())
+		throw OutofBound();
+	container[i] = num;
+	i++;
 }
 
 int	Span::shortestSpan()
 {
 	int	start = INT_MAX;
 
+	if (container.size() <= 1)
+		throw OutofBound();
 	std::vector<int> copy = this->container;
 	std::sort(copy.begin(), copy.end());
 	for (size_t i = 0; i < copy.size() - 1; i++)
@@ -75,7 +65,6 @@ int	Span::shortestSpan()
 		if (copy[i + 1] - copy[i] < start)
 			start = copy[i + 1] - copy[i];
 	}
-	std::cout << std::endl;
 	return (start);
 }
 
@@ -83,6 +72,9 @@ int	Span::longestSpan()
 {
 	std::vector<int>::iterator min;
 	std::vector<int>::iterator max;
+
+	if (container.size() <= 1)
+		throw OutofBound();
 
 	min = std::min_element(this->container.begin(), this->container.end());
 	max = std::max_element(this->container.begin(), this->container.end());

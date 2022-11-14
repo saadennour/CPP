@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:48:11 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/12 13:25:22 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/14 01:06:54 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <algorithm>
+#include <exception>
 #include <vector>
+#include <list>
 
 template <typename T>
 typename T::iterator	easyFind(T& container, int x)

@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:34:43 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/12 23:00:15 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/14 01:03:04 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,95 +21,51 @@
 template <typename T>
 class MutantStack : public std::stack<T>
 {
-private:
-	T	*stack;
-	size_t	lenght;
 public:
-	MutantStack()
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+
+	iterator begin()
 	{
-		stack = new T;
+		return this->c.begin();
 	};
-	MutantStack(size_t n)
+
+	iterator end()
 	{
-		stack = new T[n];
+		return this->c.end();
 	};
+
+	const_iterator cbegin() const
+	{
+		return this->c.cbegin();
+	};
+
+	const_iterator cend() const
+	{
+		return this->c.cend();
+	};
+
+	reverse_iterator	rbegin()
+	{
+		return this->c.rbegin();
+	};
+
+	reverse_iterator	rend()
+	{
+		return this->c.rend();
+	};
+
+	MutantStack(){};
 	MutantStack(const MutantStack& copy)
 	{
-		stack = new T;
 		*this = copy;
 	};
 
 	MutantStack& operator=(const MutantStack& copy)
 	{
-		lenght = copy.lenght;
-		delete stack;
-		stack = new T[lenght];
-		for (size_t i = 0; i < lenght; i++)
-			stack[i] = copy.stack[i];
+		this->c = copy.c;
 		return (*this);
-	};
-	
-	class iterator
-	{
-	private:
-		T	*value;
-	public:
-		iterator(){};
-		iterator(T *_value)
-		{
-			std::cout << "begin : " << &_value << '\n';
-			value = _value;
-		};
-		iterator(const iterator& copy)
-		{
-			*this = copy;
-		};
-
-		iterator&	operator=(const iterator& copy)
-		{
-			this->value = copy.value;
-			return (*this);	
-		};
-
-		bool	operator!=(const iterator& copy)
-		{
-			return (this->value != copy.value);
-		};
-
-		iterator&	operator++()
-		{
-			value++;
-			return (*this);
-		};
-
-		T&	operator*()
-		{
-			return (*value);	
-		};
-
-		iterator&	operator--()
-		{
-			this->value--;
-			return (*this);
-		};
-
-		T	getValue() const
-		{
-			return (*value);
-		};
-		~iterator(){};
-	};
-		
-	MutantStack<T>::iterator	begin() const
-	{
-		std::cout << "begin : " << &stack[0] << '\n';
-		MutantStack<T>::iterator	start(&stack[0]);
-		return (start);
-	};
-	MutantStack<T>::iterator	end() const
-	{
-		MutantStack<T>::iterator	ending(&stack[this->size() - 1]);
-		return (ending);
 	};
 
 	~MutantStack(){};

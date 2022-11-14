@@ -6,7 +6,7 @@
 /*   By: sfarhan <sfarhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:25:58 by sfarhan           #+#    #+#             */
-/*   Updated: 2022/11/12 17:29:35 by sfarhan          ###   ########.fr       */
+/*   Updated: 2022/11/14 00:31:20 by sfarhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Span
 {
 private:
 	std::vector<int> container;
+	unsigned int i;
 public:
 	Span();
 	Span(unsigned int n);
@@ -30,7 +31,13 @@ public:
 	Span&	operator=(const Span& copy);
 
 	void	addNumber(int num);
-	void	addaBunch(size_t num);
+
+	template <typename T>
+	void	addaBunch(T begin, T end)
+	{
+		for (T iter = begin; iter < end; iter++)
+			addNumber(*iter);
+	};
 
 	class	OutofBound : public std::exception
 	{
