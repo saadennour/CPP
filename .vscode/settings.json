@@ -65,7 +65,14 @@
 		"iomanip": "cpp",
 		"stack": "cpp",
 		"filesystem": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"__bits": "cpp",
+		"__tree": "cpp",
+		"clocale": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"map": "cpp",
+		"variant": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }
