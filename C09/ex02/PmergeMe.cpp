@@ -9,11 +9,14 @@ PmergeMe::PmergeMe(const PmergeMe &copy)
 	*this = copy;
 }
 
-
 PmergeMe	&PmergeMe::operator=(const PmergeMe &copy)
 {
-	(void)copy;
-	this->vec.swap
+	this->vec.clear();
+	this->deq.clear();
+	for (size_t i = 0; i < copy.vec.size(); i++)
+		this->vec.push_back(copy.vec[i]);
+	for (size_t i = 0; i < copy.deq.size(); i++)
+		this->deq.push_back(copy.deq[i]);
 	return (*this);
 }
 

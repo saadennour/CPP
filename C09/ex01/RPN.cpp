@@ -12,6 +12,7 @@ RPN::RPN(const RPN &copy)
 RPN	&RPN::operator=(const RPN &copy)
 {
 	this->head = copy.head;
+	this->operation = copy.operation;
 	return (*this);
 }
 
